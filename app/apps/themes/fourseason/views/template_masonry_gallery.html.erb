@@ -1,0 +1,50 @@
+<div id="content-section1" class="content-section black-text white-bg top-spacing-medium bottom-spacing-medium title-spacing-medium align-center " style="">
+				<div class="wrap-column">
+					<div class="content-column1">
+						<div class="widget-entry">
+							<div class="column1"> </div>
+							<div class="portfolio-container-style-1">
+								<div class="portfolio-masonry">
+
+								<% (current_site.the_post_type("product").the_posts.decorate rescue {}).each_with_index do |post, index| %>
+
+									<div class="masonry-item portfolio-style-1 column3_1 ">
+										<div class="portfolio-cell ">
+											<div class="portfolio-cell-thumb">
+												<div class="portfolio-cell-bg"></div>
+												<a class="portfolio-cell-view" rel="magnific-popup" href="<%= post.the_thumb_url.sub("http://localhost:3000", "") %>"><i class="pe-7s-search"></i></a>
+												<a href="creative-lamps/"> <img src="<%= post.the_thumb_url.sub("http://localhost:3000", "") %>" class="attachment-wope-thumb-masonry size-wope-thumb-masonry " alt="light-lamps2" /> </a> 
+											</div>
+											<div class="portfolio-cell-data">
+												<div class="portfolio-cell-title"> <a href="<%= post.the_url %>"><%= post.title %></a> </div>
+												<div class="portfolio-cell-categories"><%= post.the_categories[0].name %></div>
+											</div>
+										</div>
+									</div>
+
+								<% end %>
+
+								</div>
+								
+								<script>
+						jQuery(document).ready(function(){
+							imagesLoaded( document.querySelector('.portfolio-masonry'), function( instance ) {
+							  jQuery('.portfolio-masonry').masonry({
+								itemSelector : '.masonry-item'
+							  });
+							});
+
+							$("[rel='magnific-popup']").magnificPopup({type:'image'});
+						});
+						</script> 
+							</div>
+							<div class="cleared"></div>
+							<div class="cleared"></div>
+						</div>
+						<!-- end widget entry --> </div>
+					<div class="cleared"></div>
+				</div>
+				<!-- end wrap-column no-wrap --> 
+				
+			</div>
+			<!-- end content section --> 

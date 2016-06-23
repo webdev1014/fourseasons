@@ -1,0 +1,17 @@
+{
+  "name" : "Fourseasons",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::Fourseason::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["fourseason_on_install_theme"],
+    "on_inactive": ["fourseason_on_uninstall_theme"],
+    "on_theme_settings": ["fourseason_settings"],
+    "admin_before_load": ["fourseason_admin"],
+    "contact_form_item_render": ["fourseason_contact_form_item_render"],
+    "contact_form_render": ["fourseason_contact_form_render"]
+    //here all your hooks
+  }
+}

@@ -1,0 +1,1168 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: comments; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE comments (
+    id integer NOT NULL,
+    author character varying,
+    author_email character varying,
+    author_url character varying,
+    "author_IP" character varying,
+    content text,
+    approved character varying DEFAULT 'pending'::character varying,
+    agent character varying,
+    typee character varying,
+    comment_parent integer,
+    post_id integer,
+    user_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.comments OWNER TO rails;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.comments_id_seq OWNER TO rails;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
+
+
+--
+-- Name: custom_fields; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE custom_fields (
+    id integer NOT NULL,
+    object_class character varying,
+    name character varying,
+    slug character varying,
+    objectid integer,
+    parent_id integer,
+    field_order integer,
+    count integer DEFAULT 0,
+    is_repeat boolean DEFAULT false,
+    description text,
+    status character varying
+);
+
+
+ALTER TABLE public.custom_fields OWNER TO rails;
+
+--
+-- Name: custom_fields_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE custom_fields_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.custom_fields_id_seq OWNER TO rails;
+
+--
+-- Name: custom_fields_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE custom_fields_id_seq OWNED BY custom_fields.id;
+
+
+--
+-- Name: custom_fields_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE custom_fields_relationships (
+    id integer NOT NULL,
+    objectid integer,
+    custom_field_id integer,
+    term_order integer,
+    object_class character varying,
+    value text,
+    custom_field_slug character varying
+);
+
+
+ALTER TABLE public.custom_fields_relationships OWNER TO rails;
+
+--
+-- Name: custom_fields_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE custom_fields_relationships_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.custom_fields_relationships_id_seq OWNER TO rails;
+
+--
+-- Name: custom_fields_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE custom_fields_relationships_id_seq OWNED BY custom_fields_relationships.id;
+
+
+--
+-- Name: metas; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE metas (
+    id integer NOT NULL,
+    key character varying,
+    value text,
+    objectid integer,
+    object_class character varying
+);
+
+
+ALTER TABLE public.metas OWNER TO rails;
+
+--
+-- Name: metas_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE metas_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.metas_id_seq OWNER TO rails;
+
+--
+-- Name: metas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE metas_id_seq OWNED BY metas.id;
+
+
+--
+-- Name: plugins_attacks; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE plugins_attacks (
+    id integer NOT NULL,
+    path character varying,
+    browser_key character varying,
+    site_id integer,
+    created_at timestamp without time zone
+);
+
+
+ALTER TABLE public.plugins_attacks OWNER TO rails;
+
+--
+-- Name: plugins_attacks_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE plugins_attacks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.plugins_attacks_id_seq OWNER TO rails;
+
+--
+-- Name: plugins_attacks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE plugins_attacks_id_seq OWNED BY plugins_attacks.id;
+
+
+--
+-- Name: plugins_contact_forms; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE plugins_contact_forms (
+    id integer NOT NULL,
+    site_id integer,
+    count integer,
+    parent_id integer,
+    name character varying,
+    slug character varying,
+    description text,
+    value text,
+    settings text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+ALTER TABLE public.plugins_contact_forms OWNER TO rails;
+
+--
+-- Name: plugins_contact_forms_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE plugins_contact_forms_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.plugins_contact_forms_id_seq OWNER TO rails;
+
+--
+-- Name: plugins_contact_forms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE plugins_contact_forms_id_seq OWNED BY plugins_contact_forms.id;
+
+
+--
+-- Name: posts; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE posts (
+    id integer NOT NULL,
+    title character varying,
+    slug character varying,
+    content text,
+    content_filtered text,
+    status character varying DEFAULT 'published'::character varying,
+    published_at timestamp without time zone,
+    post_parent integer,
+    visibility character varying DEFAULT 'public'::character varying,
+    visibility_value text,
+    post_class character varying DEFAULT 'Post'::character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    user_id integer,
+    post_order integer DEFAULT 0,
+    taxonomy_id integer
+);
+
+
+ALTER TABLE public.posts OWNER TO rails;
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE posts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.posts_id_seq OWNER TO rails;
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO rails;
+
+--
+-- Name: term_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE term_relationships (
+    id integer NOT NULL,
+    objectid integer,
+    term_order integer,
+    term_taxonomy_id integer
+);
+
+
+ALTER TABLE public.term_relationships OWNER TO rails;
+
+--
+-- Name: term_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE term_relationships_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.term_relationships_id_seq OWNER TO rails;
+
+--
+-- Name: term_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE term_relationships_id_seq OWNED BY term_relationships.id;
+
+
+--
+-- Name: term_taxonomy; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE term_taxonomy (
+    id integer NOT NULL,
+    taxonomy character varying,
+    description text,
+    parent_id integer,
+    count integer,
+    name character varying,
+    slug character varying,
+    term_group integer,
+    term_order integer,
+    status character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    user_id integer
+);
+
+
+ALTER TABLE public.term_taxonomy OWNER TO rails;
+
+--
+-- Name: term_taxonomy_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE term_taxonomy_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.term_taxonomy_id_seq OWNER TO rails;
+
+--
+-- Name: term_taxonomy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE term_taxonomy_id_seq OWNED BY term_taxonomy.id;
+
+
+--
+-- Name: user_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE user_relationships (
+    id integer NOT NULL,
+    term_order integer,
+    active integer DEFAULT 1,
+    term_taxonomy_id integer,
+    user_id integer
+);
+
+
+ALTER TABLE public.user_relationships OWNER TO rails;
+
+--
+-- Name: user_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE user_relationships_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_relationships_id_seq OWNER TO rails;
+
+--
+-- Name: user_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE user_relationships_id_seq OWNED BY user_relationships.id;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    username character varying,
+    role character varying DEFAULT 'client'::character varying,
+    email character varying,
+    slug character varying,
+    password_digest character varying,
+    auth_token character varying,
+    password_reset_token character varying,
+    parent_id integer,
+    password_reset_sent_at timestamp without time zone,
+    last_login_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    site_id integer DEFAULT (-1),
+    confirm_email_token character varying,
+    confirm_email_sent_at timestamp without time zone,
+    is_valid_email boolean DEFAULT true
+);
+
+
+ALTER TABLE public.users OWNER TO rails;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO rails;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY custom_fields ALTER COLUMN id SET DEFAULT nextval('custom_fields_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY custom_fields_relationships ALTER COLUMN id SET DEFAULT nextval('custom_fields_relationships_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY metas ALTER COLUMN id SET DEFAULT nextval('metas_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY plugins_attacks ALTER COLUMN id SET DEFAULT nextval('plugins_attacks_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY plugins_contact_forms ALTER COLUMN id SET DEFAULT nextval('plugins_contact_forms_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY term_relationships ALTER COLUMN id SET DEFAULT nextval('term_relationships_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY term_taxonomy ALTER COLUMN id SET DEFAULT nextval('term_taxonomy_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY user_relationships ALTER COLUMN id SET DEFAULT nextval('user_relationships_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: rails
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY comments (id, author, author_email, author_url, "author_IP", content, approved, agent, typee, comment_parent, post_id, user_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('comments_id_seq', 1, false);
+
+
+--
+-- Data for Name: custom_fields; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY custom_fields (id, object_class, name, slug, objectid, parent_id, field_order, count, is_repeat, description, status) FROM stdin;
+1	Theme	Main Settings	fields	16	1	\N	0	f		\N
+2	_fields	Background color	bg_color	\N	1	\N	0	f	\N	\N
+3	_fields	Links color	links_color	\N	1	\N	0	f	\N	\N
+4	_fields	Background image	bg	\N	1	\N	0	f	\N	\N
+\.
+
+
+--
+-- Name: custom_fields_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('custom_fields_id_seq', 4, true);
+
+
+--
+-- Data for Name: custom_fields_relationships; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY custom_fields_relationships (id, objectid, custom_field_id, term_order, object_class, value, custom_field_slug) FROM stdin;
+\.
+
+
+--
+-- Name: custom_fields_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('custom_fields_relationships_id_seq', 1, false);
+
+
+--
+-- Data for Name: metas; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY metas (id, key, value, objectid, object_class) FROM stdin;
+1	_default	{"has_category":true,"has_tags":true,"has_summary":true,"has_content":true,"has_comments":true,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":true,"has_layout":false,"default_layout":""}	2	PostType
+3	_manager_1	{"media":1,"comments":1,"themes":1,"widgets":1,"nav_menu":1,"plugins":1,"users":1,"settings":1}	3	UserRole
+6	_default	{"not_deleted":true}	6	Category
+7	_default	{"has_category":false,"has_tags":false,"has_summary":false,"has_content":true,"has_comments":false,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":true,"has_layout":false,"default_layout":""}	7	PostType
+2	_post_type_1	{"edit":[2,7],"edit_other":[2,7],"edit_publish":[2,7],"publish":[2,7],"delete":[2,7],"delete_other":[2,7],"delete_publish":[2,7],"manage_categories":[2,7],"manage_tags":[2,7]}	3	UserRole
+8	_default	{"type":"post","object_id":1}	9	NavMenuItem
+9	_default	{"type":"post","object_id":2}	10	NavMenuItem
+4	_post_type_1	{"edit":[2,7],"edit_other":[2,7],"edit_publish":[2,7],"publish":[2,7],"delete":[2,7],"delete_other":[2,7],"delete_publish":[2,7],"manage_categories":[2,7],"manage_tags":[2,7]}	4	UserRole
+5	_post_type_1	{"edit":[2,7]}	5	UserRole
+10	_post_type_1	{}	11	UserRole
+11	_manager_1	{}	11	UserRole
+12	main_settings	{"base_domain":"45.55.56.235"}	1	Site
+13	_default	{"version_installed":0.1}	12	Plugin
+14	front_cache_elements	{"paths":[],"posts":[],"post_types":[7],"skip_posts":[],"home":true,"cache_login":true}	1	Site
+15	_default	{"version_installed":0.1}	13	Plugin
+16	_default	{"version_installed":0.1}	14	Plugin
+19	_default	{"field_key":"colorpicker"}	2	CustomField
+20	_default	{"field_key":"colorpicker"}	3	CustomField
+21	_default	{"field_key":"image"}	4	CustomField
+22	installed_at	2016-06-17 11:27:22 UTC	16	Theme
+18	_default	{"_theme":"fourseason","save_intro":true,"refresh_cache":false}	1	Site
+17	attack_config	{"get":{"sec":20,"max":10},"post":{"sec":20,"max":5},"msg":"Requests Limit exceeded!","ban":5,"cleared":"2016-06-23 01:46:34 -0400"}	1	Site
+23	visits	14	2	Post
+24	visits	13	1	Post
+\.
+
+
+--
+-- Name: metas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('metas_id_seq', 24, true);
+
+
+--
+-- Data for Name: plugins_attacks; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY plugins_attacks (id, path, browser_key, site_id, created_at) FROM stdin;
+67	get_/	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 05:46:34.868131
+68	get_/sample-post	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:05.804421
+69	get_/welcome	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:10.045786
+70	get_/	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:27.597268
+71	get_/sample-post	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:58.880349
+72	get_/	35e6c7d18afcf428ee91ab2183db2d98	1	2016-06-23 06:43:02.527066
+73	get_/testproxy.php	6fc58e6af46f678af24d195b8ca2dc43	1	2016-06-23 06:46:21.812319
+\.
+
+
+--
+-- Name: plugins_attacks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('plugins_attacks_id_seq', 73, true);
+
+
+--
+-- Data for Name: plugins_contact_forms; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY plugins_contact_forms (id, site_id, count, parent_id, name, slug, description, value, settings, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: plugins_contact_forms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('plugins_contact_forms_id_seq', 1, false);
+
+
+--
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY posts (id, title, slug, content, content_filtered, status, published_at, post_parent, visibility, visibility_value, post_class, created_at, updated_at, user_id, post_order, taxonomy_id) FROM stdin;
+1	Sample Post	sample-post	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit. </p> <p> Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus. </p> <p> Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur. </p> <p> Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor. </p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit.   Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus.   Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur.   Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor. 	published	\N	\N	public	\N	Post	2016-06-17 11:27:21.400977	2016-06-17 11:27:21.400977	1	0	2
+2	Welcome	welcome	<p style='text-align: center;'><img width='155' height='155' src='http://camaleon.tuzitio.com/media/132/logo2.png' alt='logo' /></p><p><strong>Camaleon CMS</strong>&nbsp;is a free and open-source tool and a fexible content management system (CMS) based on <a href='rubyonrails.org'>Ruby on Rails 4</a>&nbsp;and MySQL.&nbsp;</p> <p>With Camaleon you can do the following:</p> <ul> <li>Create instantly a lot of sites&nbsp;in the same installation</li> <li>Manage your content information in several languages</li> <li>Extend current functionality by&nbsp;plugins (MVC structure and no more echo or prints anywhere)</li> <li>Create or install different themes for each site</li> <li>Create your own structure without coding anything (adapt Camaleon as you want&nbsp;and not you for Camaleon)</li> <li>Create your store and start to sell your products using our plugins</li> <li>Avoid web attacks</li> <li>Compare the speed and enjoy the speed of your new Camaleon site</li> <li>Customize or create your themes for mobile support</li> <li>Support&nbsp;more visitors at the same time</li> <li>Manage your information with a panel like wordpress&nbsp;</li> <li>All urls are oriented for SEO</li> <li>Multiples roles of users</li> </ul>	Camaleon CMS is a free and open-source tool and a fexible content management system (CMS) based on Ruby on Rails 4 and MySQL.  With Camaleon you can do the following:  Create instantly a lot of sites in the same installation Manage your content information in several languages Extend current functionality by plugins (MVC structure and no more echo or prints anywhere) Create or install different themes for each site Create your own structure without coding anything (adapt Camaleon as you want and not you for Camaleon) Create your store and start to sell your products using our plugins Avoid web attacks Compare the speed and enjoy the speed of your new Camaleon site Customize or create your themes for mobile support Support more visitors at the same time Manage your information with a panel like wordpress  All urls are oriented for SEO Multiples roles of users 	published	\N	\N	public	\N	Post	2016-06-17 11:27:21.505933	2016-06-17 11:27:21.505933	1	0	7
+\.
+
+
+--
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('posts_id_seq', 2, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY schema_migrations (version) FROM stdin;
+20150611161134
+20150926095310
+20151212095328
+\.
+
+
+--
+-- Data for Name: term_relationships; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY term_relationships (id, objectid, term_order, term_taxonomy_id) FROM stdin;
+1	1	\N	6
+\.
+
+
+--
+-- Name: term_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('term_relationships_id_seq', 1, true);
+
+
+--
+-- Data for Name: term_taxonomy; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY term_taxonomy (id, taxonomy, description, parent_id, count, name, slug, term_group, term_order, status, created_at, updated_at, user_id) FROM stdin;
+1	site	\N	\N	\N	4 Seasons Grow System	45.55.56.235	\N	\N	\N	2016-06-17 11:27:20.81152	2016-06-17 11:27:20.81152	\N
+2	post_type	Posts	1	\N	Post	post	\N	\N	\N	2016-06-17 11:27:20.995233	2016-06-17 11:27:20.995233	\N
+3	user_roles	Default roles admin	1	\N	Administrator	admin	-1	\N	\N	2016-06-17 11:27:21.039696	2016-06-17 11:27:21.039696	\N
+4	user_roles	Editor Role	1	\N	Editor	editor	\N	\N	\N	2016-06-17 11:27:21.061822	2016-06-17 11:27:21.061822	\N
+5	user_roles	Contributor Role	1	\N	Contributor	contributor	\N	\N	\N	2016-06-17 11:27:21.077084	2016-06-17 11:27:21.077084	\N
+7	post_type	Pages	1	\N	Page	page	\N	\N	\N	2016-06-17 11:27:21.127269	2016-06-17 11:27:21.127269	\N
+6	category	\N	2	1	Uncategorized	uncategorized	1	\N	2	2016-06-17 11:27:21.114778	2016-06-17 11:27:21.114778	\N
+9	nav_menu_item	\N	8	\N	Sample Post	sample-post	1	\N	\N	2016-06-17 11:27:21.465456	2016-06-17 11:27:21.465456	\N
+8	nav_menu	\N	1	2	Main Menu	main_menu	\N	\N	\N	2016-06-17 11:27:21.184409	2016-06-17 11:27:21.184409	\N
+10	nav_menu_item	\N	8	\N	Welcome	welcome	1	\N	\N	2016-06-17 11:27:21.513263	2016-06-17 11:27:21.513263	\N
+11	user_roles	Default roles client	1	\N	Client	client	-1	\N	\N	2016-06-17 11:27:21.564188	2016-06-17 11:27:21.564188	\N
+12	plugin	\N	1	\N	front_cache	front_cache	1	\N	\N	2016-06-17 11:27:21.775554	2016-06-17 11:27:21.788682	\N
+13	plugin	\N	1	\N	contact_form	contact_form	1	\N	\N	2016-06-17 11:27:21.942133	2016-06-17 11:27:21.951327	\N
+14	plugin	\N	1	\N	attack	attack	1	\N	\N	2016-06-17 11:27:22.147831	2016-06-17 11:27:22.158288	\N
+15	theme	\N	1	\N	default	default	\N	\N	inactive	2016-06-17 11:27:22.379527	2016-06-17 11:27:22.379527	\N
+16	theme	\N	1	\N	Fourseasons	fourseason	\N	\N	\N	2016-06-17 11:27:22.397655	2016-06-17 11:27:22.397655	\N
+\.
+
+
+--
+-- Name: term_taxonomy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('term_taxonomy_id_seq', 16, true);
+
+
+--
+-- Data for Name: user_relationships; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY user_relationships (id, term_order, active, term_taxonomy_id, user_id) FROM stdin;
+1	\N	1	1	1
+\.
+
+
+--
+-- Name: user_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('user_relationships_id_seq', 1, true);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: rails
+--
+
+COPY users (id, username, role, email, slug, password_digest, auth_token, password_reset_token, parent_id, password_reset_sent_at, last_login_at, created_at, updated_at, site_id, confirm_email_token, confirm_email_sent_at, is_valid_email) FROM stdin;
+1	admin	admin	admin@local.com	admin	$2a$10$5X30/8ZKSACvYnRSkwW2y.w9QkwpPenaacUibLz0Wcwb3325BaExO	EejdzPUXpWzqFzGpzBXZog	\N	\N	\N	2016-06-17 11:36:19.300709	2016-06-17 11:27:21.319432	2016-06-17 11:36:19.310891	-1	\N	\N	t
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
+--
+
+SELECT pg_catalog.setval('users_id_seq', 1, true);
+
+
+--
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: custom_fields_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY custom_fields
+    ADD CONSTRAINT custom_fields_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: custom_fields_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY custom_fields_relationships
+    ADD CONSTRAINT custom_fields_relationships_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: metas_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY metas
+    ADD CONSTRAINT metas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: plugins_attacks_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY plugins_attacks
+    ADD CONSTRAINT plugins_attacks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: plugins_contact_forms_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY plugins_contact_forms
+    ADD CONSTRAINT plugins_contact_forms_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY posts
+    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: term_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY term_relationships
+    ADD CONSTRAINT term_relationships_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: term_taxonomy_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY term_taxonomy
+    ADD CONSTRAINT term_taxonomy_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY user_relationships
+    ADD CONSTRAINT user_relationships_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_comments_on_approved; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_approved ON comments USING btree (approved);
+
+
+--
+-- Name: index_comments_on_comment_parent; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_comment_parent ON comments USING btree (comment_parent);
+
+
+--
+-- Name: index_comments_on_post_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_post_id ON comments USING btree (post_id);
+
+
+--
+-- Name: index_comments_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_user_id ON comments USING btree (user_id);
+
+
+--
+-- Name: index_custom_fields_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_on_object_class ON custom_fields USING btree (object_class);
+
+
+--
+-- Name: index_custom_fields_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_on_objectid ON custom_fields USING btree (objectid);
+
+
+--
+-- Name: index_custom_fields_on_parent_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_on_parent_id ON custom_fields USING btree (parent_id);
+
+
+--
+-- Name: index_custom_fields_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_on_slug ON custom_fields USING btree (slug);
+
+
+--
+-- Name: index_custom_fields_relationships_on_custom_field_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_relationships_on_custom_field_id ON custom_fields_relationships USING btree (custom_field_id);
+
+
+--
+-- Name: index_custom_fields_relationships_on_custom_field_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_relationships_on_custom_field_slug ON custom_fields_relationships USING btree (custom_field_slug);
+
+
+--
+-- Name: index_custom_fields_relationships_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_relationships_on_object_class ON custom_fields_relationships USING btree (object_class);
+
+
+--
+-- Name: index_custom_fields_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_custom_fields_relationships_on_objectid ON custom_fields_relationships USING btree (objectid);
+
+
+--
+-- Name: index_metas_on_key; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_metas_on_key ON metas USING btree (key);
+
+
+--
+-- Name: index_metas_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_metas_on_object_class ON metas USING btree (object_class);
+
+
+--
+-- Name: index_metas_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_metas_on_objectid ON metas USING btree (objectid);
+
+
+--
+-- Name: index_plugins_attacks_on_browser_key; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_plugins_attacks_on_browser_key ON plugins_attacks USING btree (browser_key);
+
+
+--
+-- Name: index_plugins_attacks_on_path; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_plugins_attacks_on_path ON plugins_attacks USING btree (path);
+
+
+--
+-- Name: index_plugins_attacks_on_site_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_plugins_attacks_on_site_id ON plugins_attacks USING btree (site_id);
+
+
+--
+-- Name: index_posts_on_post_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_posts_on_post_class ON posts USING btree (post_class);
+
+
+--
+-- Name: index_posts_on_post_parent; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_posts_on_post_parent ON posts USING btree (post_parent);
+
+
+--
+-- Name: index_posts_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_posts_on_slug ON posts USING btree (slug);
+
+
+--
+-- Name: index_posts_on_status; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_posts_on_status ON posts USING btree (status);
+
+
+--
+-- Name: index_posts_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_posts_on_user_id ON posts USING btree (user_id);
+
+
+--
+-- Name: index_term_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_relationships_on_objectid ON term_relationships USING btree (objectid);
+
+
+--
+-- Name: index_term_relationships_on_term_order; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_relationships_on_term_order ON term_relationships USING btree (term_order);
+
+
+--
+-- Name: index_term_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_relationships_on_term_taxonomy_id ON term_relationships USING btree (term_taxonomy_id);
+
+
+--
+-- Name: index_term_taxonomy_on_parent_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_taxonomy_on_parent_id ON term_taxonomy USING btree (parent_id);
+
+
+--
+-- Name: index_term_taxonomy_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_taxonomy_on_slug ON term_taxonomy USING btree (slug);
+
+
+--
+-- Name: index_term_taxonomy_on_taxonomy; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_taxonomy_on_taxonomy ON term_taxonomy USING btree (taxonomy);
+
+
+--
+-- Name: index_term_taxonomy_on_term_order; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_taxonomy_on_term_order ON term_taxonomy USING btree (term_order);
+
+
+--
+-- Name: index_term_taxonomy_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_term_taxonomy_on_user_id ON term_taxonomy USING btree (user_id);
+
+
+--
+-- Name: index_user_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_user_relationships_on_term_taxonomy_id ON user_relationships USING btree (term_taxonomy_id);
+
+
+--
+-- Name: index_user_relationships_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_user_relationships_on_user_id ON user_relationships USING btree (user_id);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_users_on_email ON users USING btree (email);
+
+
+--
+-- Name: index_users_on_role; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_users_on_role ON users USING btree (role);
+
+
+--
+-- Name: index_users_on_site_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_users_on_site_id ON users USING btree (site_id);
+
+
+--
+-- Name: index_users_on_username; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE INDEX index_users_on_username ON users USING btree (username);
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

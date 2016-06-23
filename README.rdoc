@@ -1,0 +1,8 @@
+== README
+
+modify database.yml and secrets.yml to run rails s
+
+run rake db:data:load to seed your new PG DB
+
+user is Admin and PW is ADMINADMIN
+

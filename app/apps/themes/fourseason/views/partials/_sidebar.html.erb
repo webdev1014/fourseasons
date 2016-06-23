@@ -1,0 +1,52 @@
+<div class="small-column right">
+		<div id="" class="sidebar-widget content">
+			<div class="sidebar-widget-title">Newsletter</div>
+			<form method="post" role="form">
+				<input type="email" name="EMAIL" class="input-block" placeholder="Your email address" required />
+				<p class="small">100% Privacy, we will never share or sell your information.</p>
+				<p><input type="submit" value="Sign up" /></p>
+
+			</form>
+		</div>
+
+		<div id="wope_posts_widget-2" class="sidebar-widget widget_wope_posts_widget content">
+			<div class="sidebar-widget-title">Recent Posts</div>
+			<% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
+				<div class="widget-post">
+					<div class="widget-post-thumb" > <a href="<%=  %>"><img src="<%= syn_mini_thumb_url(post.the_thumb_url).sub('http://localhost:3000', '' ) %>" class="attachment-wope-thumb-small size-wope-thumb-small" alt="inside-badge" /></a> </div>
+					<div class="widget-post-title" > <a href="<%= post.the_url %>"><%= post.the_title %></a> </div>
+					<div class="widget-post-meta" > <a href=""><%= post.created_at.strftime("%b %-d, %Y")  %></a> </div>
+					<div class="cleared"></div>
+				</div>
+				<%# only show 3 %>
+				<% break if index == 2 %>
+			<% end %>
+		</div>
+		
+		<%# 
+		<div id="categories-2" class="sidebar-widget widget_categories content">
+			<div class="sidebar-widget-title">Categories</div>
+			<ul>
+				<li class="cat-item cat-item-2"><a href="design/" >Design</a> </li>
+				<li class="cat-item cat-item-3"><a href="inspiration/" >Inspiration</a> </li>
+				<li class="cat-item cat-item-4"><a href="technology/" >Technology</a> </li>
+				<li class="cat-item cat-item-5"><a href="work/" >Work</a> </li>
+			</ul>
+		</div>
+
+		<div id="tag_cloud-2" class="sidebar-widget widget_tag_cloud content">
+			<div class="sidebar-widget-title">Tags</div>
+			<div class="tagcloud"><a href='modern/' class='tag-link-6' title='3 topics' style='font-size: 13.6pt;'>modern</a> <a href='startup/' class='tag-link-7' title='2 topics' style='font-size: 8pt;'>Startup</a> <a href='technology/' class='tag-link-8' title='3 topics' style='font-size: 13.6pt;'>Technology</a> <a href='work/' class='tag-link-9' title='5 topics' style='font-size: 22pt;'>Work</a></div>
+		</div>
+
+		<div id="search-2" class="sidebar-widget widget_search content">
+			<div class="search-form content">
+				<form method="get" id="searchform" action="">
+					<input type="text" class="search-input" name="s" id="s" value="" placeholder="Enter your keyword" />
+					<i class="fa fa-search"></i>
+				</form>
+			</div>
+		</div>
+
+		%>
+	</div>

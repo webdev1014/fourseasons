@@ -1,0 +1,7 @@
+/.bundle
+/config/secrets.yml
+/public/assets
+/public/media
+/log/*
+!/log/.keep
+/tmp

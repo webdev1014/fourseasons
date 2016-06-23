@@ -1,0 +1,51 @@
+<div id="content-section2" class="content-section black-text white-bg top-spacing-medium bottom-spacing-medium title-spacing-medium align-center " style="">
+	<div class="wrap-column">
+		<div class="content-column3_1">
+			<div class="widget-entry">
+				<div class="column1">
+					<div class="section-widget-heading">
+						<h3 class="section-widget-title">OUR OFFICE</h3>
+					</div>
+					<div class="content content-box-content">
+						<p><strong>Our Headquarters:</strong></p>
+						<p><%= @current_site.the_field('address-line-1') if @current_site.the_field('address-line-1').present? %><br><%= @current_site.the_field('address-line-2') if @current_site.the_field('address-line-2').present? %></p>
+						<p><strong>Phone:</strong></p>
+						<p><%= @current_site.the_field('contact-phone') if @current_site.the_field('contact-phone').present? %></p>
+						<p><strong>Email: </strong></p>
+						<p><%= raw "<a href='mailto:#{@current_site.the_field('contact-email')}'>#{@current_site.the_field('contact-email')}</a>" if @current_site.the_field('contact-email').present? %></p>
+						
+					</div>
+				</div>
+				<div class="cleared"></div>
+				<div class="cleared"></div>
+			</div>
+			<!-- end widget entry --> </div>
+		<div class="content-column3_2">
+			<div class="widget-entry">
+				<div class="column1">
+					<div class="wrap-no-fullwidth">
+						<div class="section-widget-heading">
+							<h3 class="section-widget-title">SEND US MAIL</h3>
+						</div>
+					</div>
+				</div>
+				<div class="cleared"></div>
+				<div class="column1">
+					<div class="wrap-no-fullwidth">
+						<div class="contact-form">
+							<style> /*eww.. inline styles (flash message fix)*/ .row {margin-left: 0; margin-right: 0;font-family: 'Open Sans', Arial !important;}</style>
+							<%= raw do_shortcode '[forms slug=contact-form]' %>
+						</div>
+					</div>
+				</div>
+				<div class="cleared"></div>
+				<div class="cleared"></div>
+			</div>
+			<!-- end widget entry --> 
+		</div>
+		<div class="cleared"></div>
+	</div>
+	<!-- end wrap-column no-wrap --> 
+	
+</div>
+<!-- end content section --> 

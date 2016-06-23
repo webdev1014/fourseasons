@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<%= stylesheet_link_tag theme_asset_path("css/main"), debug: false %>
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var megamenu = {"effect":{"fade":{"in":{"animate":{"opacity":"show"}},"out":{"animate":{"opacity":"hide"}}},"slide":{"in":{"animate":{"height":"show"},"css":{"display":"none"}},"out":{"animate":{"height":"hide"}}}},"fade_speed":"fast","slide_speed":"fast","timeout":"300"};
+/* ]]> */
+</script>
+
+
+<%= javascript_include_tag theme_asset_path("js/main.js"), debug: false %>
+
+<%= raw the_head %>
+
+</head>
+<body class="home page page-template-default">
+<div id="background" style="">
+	<div id="scroll-header" >
+		<div id="scroll-header-content">
+			<div class="wrap" >
+				<div class="left-header">
+					<div class="site-logo"> <a class="logo-image" href="/"> <img src="<%= theme_asset_url('images/4seasons-logo.svg') %>" alt="" class="main-logo"> </a> </div>
+				</div>
+				<div class="right-header">
+					<div class="main-menu">
+						<div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
+							<div class="mega-menu-toggle"></div>
+							<!-- scrolling menu.. -->
+							<%= raw draw_menu(menu_slug: 'main_menu', container_class: 'mega-menu mega-menu-horizontal mega-no-js', container_id: "mega-menu-main-menu", item_class: "mega-menu-item mega-menu-item-has-children mega-menu-flyout", sub_class: "mega-sub-menu") %>
+							
+						</div>
+					</div>
+					<!-- End Main Menu --> 
+				</div>
+				<div class="cleared"></div>
+			</div>
+		</div>
+	</div>
+	<div id="page" >
+
+		<div id="header" class="header-transparent header-text-white heading-align-center" style="<%= @post && @post.the_field('hero-background').present? ? "background-image:url(#{ @post.the_field('hero-background').sub('http://localhost:3000', '') });" : "background-color: black" %>">
+
+
+			<div class='header_bg' style="opacity:0.5;background-color:#2e2e2e;"></div>
+			<div class="header_content">
+				<div id="top-bar">
+					<div class="wrap">
+						<div class="left-top-bar">
+							<div class="contact-detail-line">
+								<ul>
+									<% if @current_site.the_field('contact-phone').present? %>
+										<li><i class="fa fa-phone"></i><%= @current_site.the_field('contact-phone') %></li>
+									<% end %>
+
+									<% if @current_site.the_field('contact-email').present? %>
+										<li><i class="fa fa-envelope-o"></i><a href="mailto:<%= @current_site.the_field('contact-email') %>" style=
+										"color: white"><%= @current_site.the_field('contact-email') %></a></li>
+									<% end %>	
+
+									<% if @current_site.the_field('office-hours').present? %>
+										<li><i class="fa fa-clock-o"></i><%= @current_site.the_field('office-hours') %></li>
+									<% end %>
+								</ul>
+							</div>
+						</div>
+						<div class="right-top-bar">
+							<div class="header-social"> 
+								<% if @current_site.the_field('facebook-link').present? %>
+									<a target="_blank"  href="<%= @current_site.the_field('facebook-link') %>"><i class="fa fa-facebook"></i></a>
+								<% end %>
+
+								<% if @current_site.the_field('twitter-link').present? %>
+									<a target="_blank"  href="<%= @current_site.the_field('twitter-link') %>"><i class="fa fa-twitter"></i></a>
+								<% end %>
+
+								<% if @current_site.the_field('google-plus-link').present? %>
+									<a target="_blank"  href="<%= @current_site.the_field('google-plus-link') %>"><i class="fa fa-google"></i></a>
+								<% end %>		
+								<div class="cleared"></div>
+							</div>
+						</div>
+						<div class="cleared"></div>
+					</div>
+				</div>
+				<div id="top-bar-open">
+					<div class="wrap">
+						<div id="topbar-open"><i class="fa fa-angle-down"></i></div>
+					</div>
+				</div>
+				<div class="menu-bar">
+					<div class="wrap">
+						<div class="left-header">
+							<div class="site-logo">
+								<h1> <a class="logo-image" href="/"> <img src="<%= theme_asset_url('images/4seasons-logo-white.svg') %>" alt="" class="main-logo"> </a> </h1>
+							</div>
+						</div>
+						<div class="right-header">
+							<div class="main-menu">
+								<div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
+									<div class="mega-menu-toggle"></div>
+									<%= raw draw_menu(menu_slug: 'main_menu', container_class: 'mega-menu mega-menu-horizontal mega-no-js', container_id: "mega-menu-main-menu", item_class: "mega-menu-item mega-menu-item-has-children mega-menu-flyout", sub_class: "mega-sub-menu") %>
+								</div>
+							</div>
+							<!-- End Main Menu --> 
+						</div>
+						<div class="cleared"></div>
+						<div id="toggle-menu-button"><i class="fa fa-align-justify"></i></div>
+						<div class="toggle-menu">
+							<div class="menu-toggle-menu-container">
+									<%= raw draw_menu(menu_slug: 'main_menu', container_class: 'menu', container_id: "mega-toggle-menu", item_class: "menu-item" ) %>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Header Wrap --> 
+				
+				<script type='text/javascript'>
+					jQuery(window).scroll(function() {
+						if(jQuery(document).width() > 760 ){
+							var main_menu_top = jQuery('#header').find('.main-menu').offset().top + 100;
+							if(jQuery(this).scrollTop() > main_menu_top) {
+								jQuery('#scroll-header').slideDown(100);
+							} else {
+								jQuery('#scroll-header').slideUp(100);
+							}
+						}
+					});
+					
+					jQuery(window).resize(function() { //restore scroll header
+						if(jQuery(document).width() > 760){
+							
+							
+							var main_menu_top = jQuery('#header').find('.main-menu').offset().top + 100;
+							if(jQuery(this).scrollTop() > main_menu_top) {
+								jQuery('#scroll-header').slideDown(100);
+							} else {
+								jQuery('#scroll-header').slideUp(100);
+							}
+						}else{
+							
+							jQuery('#scroll-header').slideUp(100);
+						}
+					});
+
+				</script> 
+				<!-- End Header --> 
+				<% if @post && @post.the_field('hero-headline').present? %>
+				<div id="page-heading" class="heading-transparent heading-align-center heading-home">
+					<div class="wrap">
+						<div id="page-heading-left top-spacing-medium">
+							<h1 id="page-title"><%= @post.the_field('hero-headline') %></h1>
+						</div>
+						<div id="breadcrumb"><p><% if @post.the_field('hero-sub-headline').present? %> 
+													<%= @post.the_field('hero-sub-headline') %> 
+												<% else %>
+													
+												<% end %></p></div>
+						<div class="cleared"></div>
+						
+						
+					</div>
+
+					<% if @post.the_field("hero-button-url").present? && @post.the_field("hero-button-text").present? %>
+					<div class="bottom-spacing-medium">
+						<p><a href="<%= @post.the_field("hero-button-url") %>" class="Mega-Button"><%= @post.the_field("hero-button-text") %></a></p>
+					</div>
+					<% end %>
+				</div>
+				<% end %>
+
+			</div>
+			<!-- End Header Content --> 
+		</div>
+		<!-- end Header -->
+		<div class="cleared"></div>
+		
+		<!-- BEGIN CONTENT -->
+		<div id="body">
+
+	
+		<%= yield %>
+	
+		<!-- end content section --> 
+		
+		<!-- BOTTOM CTA -->
+		<% if @post && @post.the_field("cta-button-url").present? && @post.the_field("cta-button-text").present? && @post.the_field("cta-title").present? %>
+
+		<div id="content-section6" class="content-section black-text gray-bg top-spacing-no bottom-spacing-no title-spacing-medium align-center " style="">
+			<div class="no-wrap">
+				<div class="content-column1">
+					<div class="widget-entry">
+						<div class="column1">
+							<div class="callout callout-align-left callout-gray ">
+								<div class="callout-wrap ">
+									<div class="callout-inside">
+										
+										<div class="callout-content">
+											
+												<% if @post.the_field("cta-desc").present? %>
+
+													<div class="callout-main-content">
+														<p><%= @post.the_field("cta-title") %></p>
+													</div>
+													<div class="callout-sub-content">
+														<%= @post.the_field("cta-desc") %>
+													</div>
+
+												<% else %>
+
+													<p><%= @post.the_field("cta-title") %></p>
+
+												<% end %>
+
+										</div>
+
+										<div class="callout-buttons content"> <a class="button normal-button callout-button1" href="<%= @post.the_field("cta-button-url") %>"><%= @post.the_field("cta-button-text") %> </a> </div>
+
+										<div class="cleared"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cleared"></div>
+						<div class="cleared"></div>
+					</div>
+					<!-- end widget entry --> </div>
+				<div class="cleared"></div>
+			</div>
+			<!-- end wrap-column no-wrap --> 
+		</div>
+		<!-- end content section --> 
+		<% end %>
+
+		</div>
+
+		
+		<div id="footer">
+			<div class="wrap-column">
+				<div id="footer-widget-container">
+					<div class="footer-column">
+						<div id="text-2" class="footer-widget widget_text content">
+							<div class="footer-widget-title">ABOUT US</div>
+							<div class="textwidget"><%= @current_site.the_field('footer-bio').present? ? @current_site.the_field('footer-bio') : "" %>
+								<div class="footer-social">
+									<% if @current_site.the_field('facebook-link').present? %>
+										<a target="_blank"  href="<%= @current_site.the_field('facebook-link') %>"><i class="fa fa-facebook"></i></a>
+									<% end %>
+
+									<% if @current_site.the_field('twitter-link').present? %>
+										<a target="_blank"  href="<%= @current_site.the_field('twitter-link') %>"><i class="fa fa-twitter"></i></a>
+									<% end %>
+
+									<% if @current_site.the_field('google-plus-link').present? %>
+										<a target="_blank"  href="<%= @current_site.the_field('google-plus-link') %>"><i class="fa fa-google"></i></a>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer-column">
+						<div id="wope_multi_line_menu_widget-2" class="footer-widget widget_wope_multi_line_menu_widget content">
+							<div class="footer-widget-title">Quick Links</div>
+							<div class='multi_line_menu_container_2'>
+								<div class="menu-footer-widget-menu-1-container">
+									<%= raw draw_menu(menu_slug: 'footer-left', container_class: 'menu', container_id: "menu-footer-widget-menu-1", item_class: "menu-item menu-item-type-custom menu-item-object-custom", sub_class: "mega-sub-menu") %>
+								</div>
+								<div class="menu-footer-widget-menu-2-container">
+									<%= raw draw_menu(menu_slug: 'footer-right', container_class: 'menu', container_id: "menu-footer-widget-menu-2", item_class: "menu-item menu-item-type-custom menu-item-object-custom", sub_class: "mega-sub-menu") %>
+								</div>
+								<div class="cleared"></div>
+							</div>
+						</div>
+					</div>
+					<div class="footer-column">
+						<div id="text-3" class="footer-widget widget_text content">
+							<div class="footer-widget-title">Contact Us</div>
+							<div class="textwidget">
+								<strong class="fa fa-map-marker"></strong>&nbsp;
+								<%= @current_site.the_field('address-line-1') if @current_site.the_field('address-line-1').present? %><br> 
+								<strong style="opacity: 0" class="fa fa-map-marker"></strong>&nbsp;
+								<%= @current_site.the_field('address-line-2') if @current_site.the_field('address-line-2').present? %><br>
+								<strong class="fa fa-phone"></strong>&nbsp;
+								<%= @current_site.the_field('contact-phone') if @current_site.the_field('contact-phone').present? %><br>
+								<strong class="fa fa-clock-o"></strong>&nbsp;
+								<%= @current_site.the_field('office-hours') if @current_site.the_field('office-hours').present? %><br>
+								<strong class="fa fa-envelope"></strong>&nbsp;
+								<%= raw "<a href='mailto:#{@current_site.the_field('contact-email')}'>#{@current_site.the_field('contact-email')}</a>" if @current_site.the_field('contact-email').present? %>
+							</div>
+						</div>
+					</div>
+					<div class="cleared"></div>
+				</div>
+				<!-- End Footer Widget Container--> 
+			</div>
+		</div>
+		<!-- End Footer -->
+		<div id="footer-bottom" >
+			<div class="wrap">
+				<div class="footer-copyright">&copy; Copyright <%= Time.now.year %> <%= @current_site.the_field('footer-copyright').present? ? @current_site.the_field('footer-copyright') : "" %></div>
+			</div>
+		</div>
+		<!-- End Footer Bottom --> 
+	</div>
+	<!-- End Page --> 
+</div>
+<!-- End Site Background -->
+
+<%= javascript_include_tag theme_asset_path("js/footer-main.js"), debug: false %>
+</body>
+</html>

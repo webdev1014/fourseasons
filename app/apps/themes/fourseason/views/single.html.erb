@@ -1,0 +1,37 @@
+<div class="wrap">
+	<div class="big-column left">
+
+	
+	<% post = @post %>
+		<div class="post-entry">
+			<div class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-design category-technology category-work tag-modern tag-work">
+				<div class="post-entry-body">
+					<div class="post-entry-heading">
+						<div class="post-entry-meta"> <%= post.created_at.strftime("%b %-d, %Y")  %> | <a href="" rel="category tag"><%= post.the_categories[0].name %></a> | <a href="<%= post.the_url %>#disqus-thread">0 Comments <%# add disqus %></a></div>
+						<div class="post-entry-title">
+							<h2><a href="<%= post.the_url %>"><%= post.the_title %></a></h2>
+						</div>
+						<div class="section-line section-line-left"> <span class="section-line1"></span><br>
+							<span class="section-line2"></span> </div>
+					</div>
+					<div class="post-entry-media"> <!-- <a href=""><img src="<%= theme_asset_url('images/inside-badge-768x456.jpg') %>" class="attachment-post-thumbnail size-post-thumbnail " alt="inside-badge" /></a> --> 
+						<a href="<%= post.the_url %>" class="blog-featured-img-link" style="background-image: url(<%= post.the_thumb_url.sub("http://localhost:3000", "") %>)"></a>
+					</div>
+					<div class="post-entry-content content">
+						<%= raw post.the_content %>
+
+						<%= render partial: 'partials/disqus_comments' %>
+					</div>
+					<div class="cleared"></div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- End Big Column -->
+	
+	<%= render partial: 'partials/sidebar' %>
+	
+	<div class="cleared"></div>
+</div>
