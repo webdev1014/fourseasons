@@ -2,6 +2,7 @@
 /config/secrets.yml
 /public/assets
 /public/media
+/db/database.yml
 /log/*
 !/log/.keep
 /tmp

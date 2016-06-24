@@ -15,423 +15,423 @@ term_taxonomy:
   - created_at
   - updated_at
   - user_id
-  records: 
+  records:
   - - '1'
     - site
     - ''
-    - 
-    - 
+    -
+    -
     - Four Seasons
     - localhost:3000
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.10856'
     - '2016-04-27 01:05:59.569192'
-    - 
+    -
   - - '2'
     - post_type
     - Posts
     - '1'
-    - 
+    -
     - Post
     - post
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.265138'
     - '2016-04-26 15:58:27.265138'
-    - 
+    -
   - - '3'
     - user_roles
     - Default roles admin
     - '1'
-    - 
+    -
     - Administrator
     - admin
     - "-1"
-    - 
-    - 
+    -
+    -
     - '2016-04-26 15:58:27.314616'
     - '2016-04-26 15:58:27.314616'
-    - 
+    -
   - - '4'
     - user_roles
     - Editor Role
     - '1'
-    - 
+    -
     - Editor
     - editor
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.343685'
     - '2016-04-26 15:58:27.343685'
-    - 
+    -
   - - '5'
     - user_roles
     - Contributor Role
     - '1'
-    - 
+    -
     - Contributor
     - contributor
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.360887'
     - '2016-04-26 15:58:27.360887'
-    - 
+    -
   - - '6'
     - category
-    - 
+    -
     - '2'
     - '2'
     - Uncategorized
     - uncategorized
     - '1'
-    - 
+    -
     - '2'
     - '2016-04-26 15:58:27.405243'
     - '2016-04-26 15:58:27.405243'
-    - 
+    -
   - - '7'
     - post_type
     - Pages
     - '1'
-    - 
+    -
     - Page
     - page
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.4182'
     - '2016-04-26 15:58:27.4182'
-    - 
+    -
   - - '8'
     - nav_menu
-    - 
+    -
     - '1'
     - '6'
     - Main Menu
     - main_menu
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 15:58:27.482481'
     - '2016-04-26 15:58:27.482481'
-    - 
+    -
   - - '11'
     - user_roles
     - Default roles client
     - '1'
-    - 
+    -
     - Client
     - client
     - "-1"
-    - 
-    - 
+    -
+    -
     - '2016-04-26 15:58:27.98179'
     - '2016-04-26 15:58:27.98179'
-    - 
+    -
   - - '12'
     - plugin
-    - 
+    -
     - '1'
-    - 
+    -
     - front_cache
     - front_cache
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-04-26 15:58:28.179564'
     - '2016-04-26 15:58:28.202109'
-    - 
+    -
   - - '13'
     - plugin
-    - 
+    -
     - '1'
-    - 
+    -
     - contact_form
     - contact_form
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-04-26 15:58:28.404076'
     - '2016-04-26 15:58:28.423656'
-    - 
+    -
   - - '14'
     - plugin
-    - 
+    -
     - '1'
-    - 
+    -
     - attack
     - attack
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-04-26 15:58:28.729213'
     - '2016-04-26 15:58:28.748913'
-    - 
+    -
   - - '15'
     - theme
-    - 
+    -
     - '1'
-    - 
+    -
     - default
     - default
-    - 
-    - 
+    -
+    -
     - inactive
     - '2016-04-26 15:58:29.286244'
     - '2016-04-26 15:58:29.286244'
-    - 
+    -
   - - '17'
     - theme
-    - 
+    -
     - '1'
-    - 
+    -
     - Fourseasons
     - fourseason
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-26 19:18:12.964056'
     - '2016-04-26 19:18:12.964056'
-    - 
+    -
   - - '28'
     - post_type
     - Products
     - '1'
-    - 
+    -
     - Product
     - product
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-04-28 14:32:23.277262'
     - '2016-04-28 14:32:23.277262'
-    - 
+    -
   - - '29'
     - category
-    - 
+    -
     - '28'
     - '3'
     - Uncategorized
     - uncategorized
     - '1'
-    - 
+    -
     - '28'
     - '2016-04-28 14:32:23.641605'
     - '2016-04-28 14:32:23.641605'
-    - 
+    -
   - - '37'
     - nav_menu_item
-    - 
+    -
     - '8'
-    - 
+    -
     - Home
     - home
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.114178'
     - '2016-05-04 00:51:20.114178'
-    - 
+    -
   - - '38'
     - nav_menu_item
-    - 
+    -
     - '8'
     - '1'
     - Our Solutions
     - our-solutions
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.22739'
     - '2016-05-04 00:51:20.22739'
-    - 
+    -
   - - '39'
     - nav_menu_item
-    - 
+    -
     - '38'
-    - 
+    -
     - How to Buy
     - how-to-buy
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.336317'
     - '2016-05-04 00:51:20.336317'
-    - 
+    -
   - - '40'
     - nav_menu_item
-    - 
+    -
     - '8'
-    - 
+    -
     - Contact Us
     - contact-us
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.467708'
     - '2016-05-04 00:51:20.467708'
-    - 
+    -
   - - '41'
     - nav_menu_item
-    - 
+    -
     - '8'
-    - 
+    -
     - About Us
     - about-us
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.602919'
     - '2016-05-04 00:51:20.602919'
-    - 
+    -
   - - '42'
     - nav_menu_item
-    - 
+    -
     - '8'
-    - 
+    -
     - Product Gallery
     - product-gallery
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.739705'
     - '2016-05-04 00:51:20.739705'
-    - 
+    -
   - - '43'
     - nav_menu_item
-    - 
+    -
     - '8'
-    - 
+    -
     - Blog
     - blog
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:51:20.840941'
     - '2016-05-04 00:51:20.840941'
-    - 
+    -
   - - '44'
     - nav_menu
-    - 
+    -
     - '1'
     - '4'
     - Footer Left
     - footer-left
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-05-04 00:51:38.227071'
     - '2016-05-04 00:51:38.227071'
-    - 
+    -
   - - '49'
     - nav_menu
-    - 
+    -
     - '1'
     - '3'
     - Footer Right
     - footer-right
-    - 
-    - 
-    - 
+    -
+    -
+    -
     - '2016-05-04 00:53:03.50211'
     - '2016-05-04 00:53:03.50211'
-    - 
+    -
   - - '56'
     - nav_menu_item
-    - 
+    -
     - '49'
-    - 
+    -
     - Product Gallery
     - product-gallery
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:04.909129'
     - '2016-05-04 00:56:04.909129'
-    - 
+    -
   - - '57'
     - nav_menu_item
-    - 
+    -
     - '49'
-    - 
+    -
     - How to Buy
     - how-to-buy
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:04.975194'
     - '2016-05-04 00:56:04.975194'
-    - 
+    -
   - - '58'
     - nav_menu_item
-    - 
+    -
     - '49'
-    - 
+    -
     - Blog
     - blog
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:05.043538'
     - '2016-05-04 00:56:05.043538'
-    - 
+    -
   - - '59'
     - nav_menu_item
-    - 
+    -
     - '44'
-    - 
+    -
     - Home
     - home
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:44.048509'
     - '2016-05-04 00:56:44.048509'
-    - 
+    -
   - - '60'
     - nav_menu_item
-    - 
+    -
     - '44'
-    - 
+    -
     - Our Solutions
     - our-solutions
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:44.126829'
     - '2016-05-04 00:56:44.126829'
-    - 
+    -
   - - '61'
     - nav_menu_item
-    - 
+    -
     - '44'
-    - 
+    -
     - About Us
     - about-us
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:44.203767'
     - '2016-05-04 00:56:44.203767'
-    - 
+    -
   - - '62'
     - nav_menu_item
-    - 
+    -
     - '44'
-    - 
+    -
     - Contact Us
     - contact-us
     - '1'
-    - 
-    - 
+    -
+    -
     - '2016-05-04 00:56:44.309008'
     - '2016-05-04 00:56:44.309008'
-    - 
+    -
   - - '63'
     - category
     - ''
@@ -440,11 +440,11 @@ term_taxonomy:
     - Greenhouse
     - greenhouse
     - '1'
-    - 
+    -
     - '28'
     - '2016-05-09 16:43:21.854392'
     - '2016-05-09 16:43:21.854392'
-    - 
+    -
 
 ---
 term_relationships:
@@ -453,42 +453,42 @@ term_relationships:
   - objectid
   - term_order
   - term_taxonomy_id
-  records: 
+  records:
   - - '1'
     - '1'
-    - 
+    -
     - '6'
   - - '3'
     - '9'
-    - 
+    -
     - '29'
   - - '6'
     - '12'
-    - 
+    -
     - '29'
   - - '8'
     - '14'
-    - 
+    -
     - '29'
   - - '10'
     - '19'
-    - 
+    -
     - '6'
   - - '12'
     - '17'
-    - 
+    -
     - '63'
   - - '13'
     - '13'
-    - 
+    -
     - '63'
   - - '14'
     - '11'
-    - 
+    -
     - '63'
   - - '15'
     - '10'
-    - 
+    -
     - '63'
 
 ---
@@ -501,7 +501,7 @@ custom_fields_relationships:
   - object_class
   - value
   - custom_field_slug
-  records: 
+  records:
   - - '9'
     - '1'
     - '12'
@@ -1269,9 +1269,9 @@ user_relationships:
   - active
   - term_taxonomy_id
   - user_id
-  records: 
+  records:
   - - '1'
-    - 
+    -
     - '1'
     - '1'
     - '1'
@@ -1290,51 +1290,51 @@ custom_fields:
   - is_repeat
   - description
   - status
-  records: 
+  records:
   - - '1'
     - Theme
     - Main Settings
     - fields
     - '33'
     - '18'
-    - 
+    -
     - '0'
     - false
     - ''
-    - 
+    -
   - - '2'
     - _fields
     - Background color
     - bg_color
-    - 
+    -
     - '1'
-    - 
+    -
     - '0'
     - false
-    - 
-    - 
+    -
+    -
   - - '3'
     - _fields
     - Links color
     - links_color
-    - 
+    -
     - '1'
-    - 
+    -
     - '0'
     - false
-    - 
-    - 
+    -
+    -
   - - '4'
     - _fields
     - Background image
     - bg
-    - 
+    -
     - '1'
-    - 
+    -
     - '0'
     - false
-    - 
-    - 
+    -
+    -
   - - '5'
     - Site
     - Social and Contact Info
@@ -1345,106 +1345,106 @@ custom_fields:
     - '0'
     - false
     - ''
-    - 
+    -
   - - '6'
     - _fields
     - Contact Email
     - contact-email
-    - 
+    -
     - '5'
     - '3'
     - '0'
     - false
     - Main contact email
-    - 
+    -
   - - '7'
     - _fields
     - Contact Phone
     - contact-phone
-    - 
+    -
     - '5'
     - '4'
     - '0'
     - false
     - Contact Phone Number
-    - 
+    -
   - - '8'
     - _fields
     - Office Hours
     - office-hours
-    - 
+    -
     - '5'
     - '8'
     - '0'
     - false
     - Hours of operation
-    - 
+    -
   - - '9'
     - _fields
     - Facebook Link
     - facebook-link
-    - 
+    -
     - '5'
     - '0'
     - '0'
     - false
     - Link to facebook page
-    - 
+    -
   - - '10'
     - _fields
     - Twitter Link
     - twitter-link
-    - 
+    -
     - '5'
     - '1'
     - '0'
     - false
     - Link to twitter page
-    - 
+    -
   - - '11'
     - _fields
     - Google Plus Link
     - google-plus-link
-    - 
+    -
     - '5'
     - '2'
     - '0'
     - false
     - Link to Google+ page
-    - 
+    -
   - - '12'
     - _fields
     - Contact Fax
     - contact-fax
-    - 
+    -
     - '5'
     - '5'
     - '0'
     - false
     - Contact Fax number
-    - 
+    -
   - - '13'
     - _fields
     - Address Line 1
     - address-line-1
-    - 
+    -
     - '5'
     - '6'
     - '0'
     - false
     - Address line 1
-    - 
+    -
   - - '14'
     - _fields
     - Address line 2
     - address-line-2
-    - 
+    -
     - '5'
     - '7'
     - '0'
     - false
     - Address line 2 (city state zip)
-    - 
+    -
   - - '15'
     - PostType_Post
     - CTA with button
@@ -1455,51 +1455,51 @@ custom_fields:
     - '0'
     - false
     - Customize bottom cta
-    - 
+    -
   - - '16'
     - _fields
     - CTA Title
     - cta-title
-    - 
+    -
     - '15'
     - '0'
     - '0'
     - false
     - Main bold CTA title text
-    - 
+    -
   - - '17'
     - _fields
     - CTA Desc
     - cta-desc
-    - 
+    -
     - '15'
     - '1'
     - '0'
     - false
     - CTA description shown under title text (Optional)
-    - 
+    -
   - - '18'
     - _fields
     - CTA Button Text
     - cta-button-text
-    - 
+    -
     - '15'
     - '2'
     - '0'
     - false
     - 'Text for CTA Button ex: BUY NOW! '
-    - 
+    -
   - - '19'
     - _fields
     - CTA Button URL
     - cta-button-url
-    - 
+    -
     - '15'
     - '3'
     - '0'
     - false
     - CTA Button link
-    - 
+    -
   - - '20'
     - PostType_Post
     - Hero
@@ -1510,128 +1510,128 @@ custom_fields:
     - '0'
     - false
     - Hero Image and headlines
-    - 
+    -
   - - '21'
     - _fields
     - Hero Background
     - hero-background
-    - 
+    -
     - '20'
     - '0'
     - '0'
     - false
     - Image to display as hero background..
-    - 
+    -
   - - '22'
     - _fields
     - Hero Headline
     - hero-headline
-    - 
+    -
     - '20'
     - '1'
     - '0'
     - false
     - Headline text on hero
-    - 
+    -
   - - '23'
     - _fields
     - Hero Sub Headline
     - hero-sub-headline
-    - 
+    -
     - '20'
     - '2'
     - '0'
     - false
     - Sub headline text on hero
-    - 
+    -
   - - '24'
     - _fields
     - Hero Button Text
     - hero-button-text
-    - 
+    -
     - '20'
     - '3'
     - '0'
     - false
     - 'Text for button '
-    - 
+    -
   - - '25'
     - _fields
     - Hero Button URL
     - hero-button-url
-    - 
+    -
     - '20'
     - '4'
     - '0'
     - false
     - URL for button
-    - 
+    -
   - - '26'
     - PostType_Post
     - Product Info
     - _group-product-info
     - '28'
     - '1'
-    - 
+    -
     - '0'
     - false
     - Info for products
-    - 
+    -
   - - '27'
     - _fields
     - Product Description
     - product-description
-    - 
+    -
     - '26'
     - '0'
     - '0'
     - false
     - Short product description
-    - 
+    -
   - - '28'
     - _fields
     - Product Price
     - product-price
-    - 
+    -
     - '26'
     - '1'
     - '0'
     - false
     - Product Price
-    - 
+    -
   - - '29'
     - Site
     - Footer Info
     - _group-footer-info
     - '1'
     - '1'
-    - 
+    -
     - '0'
     - false
     - ''
-    - 
+    -
   - - '30'
     - _fields
     - footer-copyright
     - footer-copyright
-    - 
+    -
     - '29'
     - '0'
     - '0'
     - false
     - Website copyright text in footer
-    - 
+    -
   - - '31'
     - _fields
     - Footer Bio
     - footer-bio
-    - 
+    -
     - '29'
     - '1'
     - '0'
     - false
     - Bio text about the company in footer.
-    - 
+    -
 
 ---
 metas:
@@ -1641,7 +1641,7 @@ metas:
   - value
   - objectid
   - object_class
-  records: 
+  records:
   - - '1'
     - _default
     - '{"has_category":true,"has_tags":true,"has_summary":true,"has_content":true,"has_comments":true,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":true,"has_layout":false,"default_layout":""}'
@@ -1916,7 +1916,7 @@ metas:
   - - '73'
     - cache_browser_files_{:server=>"local", :connection=>nil, :thumb_folder_name=>"thumb",
       :bucket_name=>"media", :thumb=>{:w=>100, :h=>100}}
-    - 
+    -
     - '1'
     - Site
   - - '74'
@@ -2533,23 +2533,23 @@ users:
   - confirm_email_token
   - confirm_email_sent_at
   - is_valid_email
-  records: 
+  records:
   - - '1'
     - admin
     - admin
     - admin@local.com
     - admin
-    - "$2a$10$8ay6bELjk7pEtd4B2GXex.6OpvGK/.WAqRTkzfZa2SdqXp2IQ2yf2"
-    - SmV7l__pJA1lH3ON-r3iJg
-    - 
-    - 
-    - 
+    - "$2a$10$Eh5CeZMWNAa5ekM2lvU23O0FcNKcX96shgY1jsyftUtssDjxChD/C"
+    - 2zMtAL1v_9cEwVscPsvlcA
+    -
+    -
+    -
     - '2016-05-09 13:15:09.64634'
     - '2016-04-26 15:58:27.628342'
     - '2016-05-09 13:15:09.674058'
     - "-1"
-    - 
-    - 
+    -
+    -
     - true
 
 ---
@@ -2571,7 +2571,7 @@ posts:
   - user_id
   - post_order
   - taxonomy_id
-  records: 
+  records:
   - - '1'
     - Sample Post
     - sample-post
@@ -2634,10 +2634,10 @@ posts:
       mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur
       in commodo arcu, at vehicula tortor.
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-26 15:58:27.738336'
     - '2016-05-02 17:36:14.00797'
@@ -2675,10 +2675,10 @@ posts:
       with a panel like wordpress  All urls are oriented for SEO Multiples roles of
       users '
     - trash
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-26 15:58:27.909489'
     - '2016-04-26 15:58:27.909489'
@@ -2691,10 +2691,10 @@ posts:
     - "<p>The homepage</p>"
     - The homepage
     - trash
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-27 01:05:18.459809'
     - '2016-04-27 01:05:18.459809'
@@ -2707,10 +2707,10 @@ posts:
     - "<p>Look at our products</p>"
     - Look at our products
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-27 01:37:45.482641'
     - '2016-04-27 01:37:45.482641'
@@ -2723,10 +2723,10 @@ posts:
     - "<p>we are awesome</p>"
     - we are awesome
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-27 15:59:38.255784'
     - '2016-04-27 15:59:38.255784'
@@ -2759,10 +2759,10 @@ posts:
       dignissimos ipsa expedita in non iste officiis est ratione, beatae, illo aliquid
       vel?
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-27 20:45:32.817472'
     - '2016-04-28 03:25:40.721028'
@@ -2775,10 +2775,10 @@ posts:
     - "<p>The homepage</p>"
     - The homepage
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 03:02:58.32868'
     - '2016-04-28 03:02:58.32868'
@@ -2791,10 +2791,10 @@ posts:
     - "<h1>Test Product</h1>\r\n<p>Such a great little product</p>"
     - Test Product Such a great little product
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 14:39:03.892049'
     - '2016-04-28 14:39:03.892049'
@@ -2807,10 +2807,10 @@ posts:
     - "<p>This product is pretty detailed</p>"
     - This product is pretty detailed
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 15:06:20.17066'
     - '2016-04-28 15:06:20.17066'
@@ -2823,10 +2823,10 @@ posts:
     - "<p>In case you need to test your products</p>"
     - In case you need to test your products
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 15:08:19.039637'
     - '2016-04-28 15:08:19.039637'
@@ -2839,10 +2839,10 @@ posts:
     - "<p>testing</p>"
     - testing
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 15:09:24.140515'
     - '2016-04-28 15:09:24.140515'
@@ -2855,10 +2855,10 @@ posts:
     - "<p>asokjroas</p>"
     - asokjroas
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 15:10:39.259176'
     - '2016-04-28 15:10:39.259176'
@@ -2871,10 +2871,10 @@ posts:
     - "<p>safasfsa</p>"
     - safasfsa
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 15:12:35.642847'
     - '2016-04-28 15:12:35.642847'
@@ -2887,10 +2887,10 @@ posts:
     - "<p>Please Contact Us.</p>"
     - Please Contact Us.
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-28 23:54:01.300858'
     - '2016-04-28 23:54:01.300858'
@@ -2992,10 +2992,10 @@ posts:
       eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et
       illo tempore voluptatem cum in repudianda.       "
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-29 13:08:06.163929'
     - '2016-05-02 21:12:30.72288'
@@ -3008,10 +3008,10 @@ posts:
     - "<p>This product is great for saving space.</p>"
     - This product is great for saving space.
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-29 15:20:53.331035'
     - '2016-04-29 15:20:53.331035'
@@ -3024,10 +3024,10 @@ posts:
     - "<p>Welcome to the blog.</p>"
     - Welcome to the blog.
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-30 16:25:28.879909'
     - '2016-04-30 16:42:30.592739'
@@ -3071,10 +3071,10 @@ posts:
       ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam tincidunt mauris
       eu risus.   #header h1 a { display: block; width: 300px; height: 80px; } '
     - published
-    - 
-    - 
+    -
+    -
     - public
-    - 
+    -
     - Post
     - '2016-04-30 16:38:36.967169'
     - '2016-04-30 16:38:36.967169'
@@ -3087,10 +3087,10 @@ posts:
     - "<p>Welcome to the blog.</p>"
     - Welcome to the blog.
     - draft
-    - 
+    -
     - '18'
     - public
-    - 
+    -
     - Post
     - '2016-04-30 16:42:31.671346'
     - '2016-04-30 16:42:31.671346'
@@ -3112,11 +3112,11 @@ plugins_contact_forms:
   - settings
   - created_at
   - updated_at
-  records: 
+  records:
   - - '1'
     - '1'
-    - 
-    - 
+    -
+    -
     - Contact Form
     - contact-form
     - ''
@@ -3146,12 +3146,12 @@ plugins_contact_forms:
     - '2016-05-04 00:44:03.380579'
   - - '2'
     - '1'
-    - 
+    -
     - '1'
     - response-2016-05-03 20:33:23 -0400
     - response-2016-05-03-20-33-23-0400
     - ''
-    - 
+    -
     - '{"fields":{"c2":"sfaf","c10":"asfs@gmail.com","c6":"516545644","c14":"salkjf","c19":"lol"},"created_at":"2016-05-03
       20:33:23"}'
     - '2016-05-04 00:33:23.681211'
@@ -3165,7 +3165,7 @@ plugins_attacks:
   - browser_key
   - site_id
   - created_at
-  records: 
+  records:
   - - '1791'
     - get_/
     - 93d13949b2bc7a8a4c1b9ca682fbbbda
