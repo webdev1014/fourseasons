@@ -2,22 +2,26 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -30,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: comments; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: comments; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE comments (
@@ -51,7 +55,7 @@ CREATE TABLE comments (
 );
 
 
-ALTER TABLE public.comments OWNER TO rails;
+ALTER TABLE comments OWNER TO rails;
 
 --
 -- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -65,7 +69,7 @@ CREATE SEQUENCE comments_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.comments_id_seq OWNER TO rails;
+ALTER TABLE comments_id_seq OWNER TO rails;
 
 --
 -- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -75,7 +79,7 @@ ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
 
 
 --
--- Name: custom_fields; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: custom_fields; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE custom_fields (
@@ -93,7 +97,7 @@ CREATE TABLE custom_fields (
 );
 
 
-ALTER TABLE public.custom_fields OWNER TO rails;
+ALTER TABLE custom_fields OWNER TO rails;
 
 --
 -- Name: custom_fields_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -107,7 +111,7 @@ CREATE SEQUENCE custom_fields_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.custom_fields_id_seq OWNER TO rails;
+ALTER TABLE custom_fields_id_seq OWNER TO rails;
 
 --
 -- Name: custom_fields_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -117,7 +121,7 @@ ALTER SEQUENCE custom_fields_id_seq OWNED BY custom_fields.id;
 
 
 --
--- Name: custom_fields_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: custom_fields_relationships; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE custom_fields_relationships (
@@ -131,7 +135,7 @@ CREATE TABLE custom_fields_relationships (
 );
 
 
-ALTER TABLE public.custom_fields_relationships OWNER TO rails;
+ALTER TABLE custom_fields_relationships OWNER TO rails;
 
 --
 -- Name: custom_fields_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -145,7 +149,7 @@ CREATE SEQUENCE custom_fields_relationships_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.custom_fields_relationships_id_seq OWNER TO rails;
+ALTER TABLE custom_fields_relationships_id_seq OWNER TO rails;
 
 --
 -- Name: custom_fields_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -155,7 +159,7 @@ ALTER SEQUENCE custom_fields_relationships_id_seq OWNED BY custom_fields_relatio
 
 
 --
--- Name: metas; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: metas; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE metas (
@@ -167,7 +171,7 @@ CREATE TABLE metas (
 );
 
 
-ALTER TABLE public.metas OWNER TO rails;
+ALTER TABLE metas OWNER TO rails;
 
 --
 -- Name: metas_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -181,7 +185,7 @@ CREATE SEQUENCE metas_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.metas_id_seq OWNER TO rails;
+ALTER TABLE metas_id_seq OWNER TO rails;
 
 --
 -- Name: metas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -191,7 +195,7 @@ ALTER SEQUENCE metas_id_seq OWNED BY metas.id;
 
 
 --
--- Name: plugins_attacks; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: plugins_attacks; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE plugins_attacks (
@@ -203,7 +207,7 @@ CREATE TABLE plugins_attacks (
 );
 
 
-ALTER TABLE public.plugins_attacks OWNER TO rails;
+ALTER TABLE plugins_attacks OWNER TO rails;
 
 --
 -- Name: plugins_attacks_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -217,7 +221,7 @@ CREATE SEQUENCE plugins_attacks_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.plugins_attacks_id_seq OWNER TO rails;
+ALTER TABLE plugins_attacks_id_seq OWNER TO rails;
 
 --
 -- Name: plugins_attacks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -227,7 +231,7 @@ ALTER SEQUENCE plugins_attacks_id_seq OWNED BY plugins_attacks.id;
 
 
 --
--- Name: plugins_contact_forms; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: plugins_contact_forms; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE plugins_contact_forms (
@@ -245,7 +249,7 @@ CREATE TABLE plugins_contact_forms (
 );
 
 
-ALTER TABLE public.plugins_contact_forms OWNER TO rails;
+ALTER TABLE plugins_contact_forms OWNER TO rails;
 
 --
 -- Name: plugins_contact_forms_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -259,7 +263,7 @@ CREATE SEQUENCE plugins_contact_forms_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.plugins_contact_forms_id_seq OWNER TO rails;
+ALTER TABLE plugins_contact_forms_id_seq OWNER TO rails;
 
 --
 -- Name: plugins_contact_forms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -269,7 +273,7 @@ ALTER SEQUENCE plugins_contact_forms_id_seq OWNED BY plugins_contact_forms.id;
 
 
 --
--- Name: posts; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: posts; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE posts (
@@ -292,7 +296,7 @@ CREATE TABLE posts (
 );
 
 
-ALTER TABLE public.posts OWNER TO rails;
+ALTER TABLE posts OWNER TO rails;
 
 --
 -- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -306,7 +310,7 @@ CREATE SEQUENCE posts_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.posts_id_seq OWNER TO rails;
+ALTER TABLE posts_id_seq OWNER TO rails;
 
 --
 -- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -316,7 +320,7 @@ ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE schema_migrations (
@@ -324,10 +328,10 @@ CREATE TABLE schema_migrations (
 );
 
 
-ALTER TABLE public.schema_migrations OWNER TO rails;
+ALTER TABLE schema_migrations OWNER TO rails;
 
 --
--- Name: term_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: term_relationships; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE term_relationships (
@@ -338,7 +342,7 @@ CREATE TABLE term_relationships (
 );
 
 
-ALTER TABLE public.term_relationships OWNER TO rails;
+ALTER TABLE term_relationships OWNER TO rails;
 
 --
 -- Name: term_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -352,7 +356,7 @@ CREATE SEQUENCE term_relationships_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.term_relationships_id_seq OWNER TO rails;
+ALTER TABLE term_relationships_id_seq OWNER TO rails;
 
 --
 -- Name: term_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -362,7 +366,7 @@ ALTER SEQUENCE term_relationships_id_seq OWNED BY term_relationships.id;
 
 
 --
--- Name: term_taxonomy; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: term_taxonomy; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE term_taxonomy (
@@ -382,7 +386,7 @@ CREATE TABLE term_taxonomy (
 );
 
 
-ALTER TABLE public.term_taxonomy OWNER TO rails;
+ALTER TABLE term_taxonomy OWNER TO rails;
 
 --
 -- Name: term_taxonomy_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -396,7 +400,7 @@ CREATE SEQUENCE term_taxonomy_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.term_taxonomy_id_seq OWNER TO rails;
+ALTER TABLE term_taxonomy_id_seq OWNER TO rails;
 
 --
 -- Name: term_taxonomy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -406,7 +410,7 @@ ALTER SEQUENCE term_taxonomy_id_seq OWNED BY term_taxonomy.id;
 
 
 --
--- Name: user_relationships; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: user_relationships; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE user_relationships (
@@ -418,7 +422,7 @@ CREATE TABLE user_relationships (
 );
 
 
-ALTER TABLE public.user_relationships OWNER TO rails;
+ALTER TABLE user_relationships OWNER TO rails;
 
 --
 -- Name: user_relationships_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -432,7 +436,7 @@ CREATE SEQUENCE user_relationships_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_relationships_id_seq OWNER TO rails;
+ALTER TABLE user_relationships_id_seq OWNER TO rails;
 
 --
 -- Name: user_relationships_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -442,7 +446,7 @@ ALTER SEQUENCE user_relationships_id_seq OWNED BY user_relationships.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: rails; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: rails
 --
 
 CREATE TABLE users (
@@ -459,14 +463,14 @@ CREATE TABLE users (
     last_login_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    site_id integer DEFAULT (-1),
+    site_id integer DEFAULT '-1'::integer,
     confirm_email_token character varying,
     confirm_email_sent_at timestamp without time zone,
     is_valid_email boolean DEFAULT true
 );
 
 
-ALTER TABLE public.users OWNER TO rails;
+ALTER TABLE users OWNER TO rails;
 
 --
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: rails
@@ -480,7 +484,7 @@ CREATE SEQUENCE users_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_seq OWNER TO rails;
+ALTER TABLE users_id_seq OWNER TO rails;
 
 --
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rails
@@ -586,10 +590,37 @@ SELECT pg_catalog.setval('comments_id_seq', 1, false);
 --
 
 COPY custom_fields (id, object_class, name, slug, objectid, parent_id, field_order, count, is_repeat, description, status) FROM stdin;
-1	Theme	Main Settings	fields	16	1	\N	0	f		\N
+1	Theme	Main Settings	fields	33	18	\N	0	f		\N
 2	_fields	Background color	bg_color	\N	1	\N	0	f	\N	\N
 3	_fields	Links color	links_color	\N	1	\N	0	f	\N	\N
 4	_fields	Background image	bg	\N	1	\N	0	f	\N	\N
+5	Site	Social and Contact Info	_group-social-and-contact-info	1	1	1	0	f		\N
+6	_fields	Contact Email	contact-email	\N	5	3	0	f	Main contact email	\N
+7	_fields	Contact Phone	contact-phone	\N	5	4	0	f	Contact Phone Number	\N
+8	_fields	Office Hours	office-hours	\N	5	8	0	f	Hours of operation	\N
+9	_fields	Facebook Link	facebook-link	\N	5	0	0	f	Link to facebook page	\N
+10	_fields	Twitter Link	twitter-link	\N	5	1	0	f	Link to twitter page	\N
+11	_fields	Google Plus Link	google-plus-link	\N	5	2	0	f	Link to Google+ page	\N
+12	_fields	Contact Fax	contact-fax	\N	5	5	0	f	Contact Fax number	\N
+13	_fields	Address Line 1	address-line-1	\N	5	6	0	f	Address line 1	\N
+14	_fields	Address line 2	address-line-2	\N	5	7	0	f	Address line 2 (city state zip)	\N
+15	PostType_Post	CTA with button	_group-cta-with-button	7	1	2	0	f	Customize bottom cta	\N
+16	_fields	CTA Title	cta-title	\N	15	0	0	f	Main bold CTA title text	\N
+17	_fields	CTA Desc	cta-desc	\N	15	1	0	f	CTA description shown under title text (Optional)	\N
+18	_fields	CTA Button Text	cta-button-text	\N	15	2	0	f	Text for CTA Button ex: BUY NOW! 	\N
+19	_fields	CTA Button URL	cta-button-url	\N	15	3	0	f	CTA Button link	\N
+20	PostType_Post	Hero	_group-hero	7	1	0	0	f	Hero Image and headlines	\N
+21	_fields	Hero Background	hero-background	\N	20	0	0	f	Image to display as hero background..	\N
+22	_fields	Hero Headline	hero-headline	\N	20	1	0	f	Headline text on hero	\N
+23	_fields	Hero Sub Headline	hero-sub-headline	\N	20	2	0	f	Sub headline text on hero	\N
+24	_fields	Hero Button Text	hero-button-text	\N	20	3	0	f	Text for button 	\N
+25	_fields	Hero Button URL	hero-button-url	\N	20	4	0	f	URL for button	\N
+26	PostType_Post	Product Info	_group-product-info	28	1	\N	0	f	Info for products	\N
+27	_fields	Product Description	product-description	\N	26	0	0	f	Short product description	\N
+28	_fields	Product Price	product-price	\N	26	1	0	f	Product Price	\N
+29	Site	Footer Info	_group-footer-info	1	1	\N	0	f		\N
+30	_fields	footer-copyright	footer-copyright	\N	29	0	0	f	Website copyright text in footer	\N
+31	_fields	Footer Bio	footer-bio	\N	29	1	0	f	Bio text about the company in footer.	\N
 \.
 
 
@@ -597,7 +628,7 @@ COPY custom_fields (id, object_class, name, slug, objectid, parent_id, field_ord
 -- Name: custom_fields_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('custom_fields_id_seq', 4, true);
+SELECT pg_catalog.setval('custom_fields_id_seq', 32, false);
 
 
 --
@@ -605,6 +636,114 @@ SELECT pg_catalog.setval('custom_fields_id_seq', 4, true);
 --
 
 COPY custom_fields_relationships (id, objectid, custom_field_id, term_order, object_class, value, custom_field_slug) FROM stdin;
+9	1	12	0	Site	(042) 000-1111	contact-fax
+12	1	8	0	Site	10AM - 6PM	office-hours
+17	17	12	0	Theme	(042) 000-1111	contact-fax
+20	17	8	0	Theme	10AM - 6PM	office-hours
+21	1	6	0	Site	info@fourseasons.com	contact-email
+22	1	13	0	Site	145 S Livernoise St, Suite  271	address-line-1
+23	1	14	0	Site	Rochester Hills, MI 48307	address-line-2
+24	17	6	0	Theme	info@fourseasons.com	contact-email
+25	17	13	0	Theme	145 S Livernoise St, Suite  271	address-line-1
+26	17	14	0	Theme	Rochester Hills, MI 48307	address-line-2
+27	1	9	0	Site	http://facebook.com/	facebook-link
+28	1	10	0	Site	http://twitter.com/	twitter-link
+29	1	11	0	Site	http://plus.google.com/	google-plus-link
+30	17	9	0	Theme	http://facebook.com/	facebook-link
+31	17	10	0	Theme	http://twitter.com/	twitter-link
+32	17	11	0	Theme	http://plus.google.com/	google-plus-link
+34	5	17	0	Post		cta-desc
+54	7	22	0	Post	Welcome to Four Seasons	hero-headline
+55	7	23	0	Post	Lorem ipsum dolor sit amet, consectetur adipisicing elit.	hero-sub-headline
+60	6	17	0	Post		cta-desc
+72	4	16	0	Post		cta-title
+73	4	17	0	Post		cta-desc
+74	4	18	0	Post		cta-button-text
+75	4	19	0	Post		cta-button-url
+82	7	19	0	Post	http://google.com	cta-button-url
+84	7	25	0	Post	#	hero-button-url
+85	5	22	0	Post	Learn more about us	hero-headline
+86	5	23	0	Post	We've been around for lorem ipsum dolor sit	hero-sub-headline
+87	5	24	0	Post		hero-button-text
+88	5	25	0	Post		hero-button-url
+89	4	22	0	Post	Just look at our amazing products	hero-headline
+90	4	23	0	Post	Lorem ipsum dolor sit amet, consectetur adipisicing elit.	hero-sub-headline
+91	4	24	0	Post		hero-button-text
+92	4	25	0	Post		hero-button-url
+93	6	22	0	Post	We have your solution	hero-headline
+94	6	23	0	Post	Lorem ipsum dolor sit amet, consectetur adipisicing elit.	hero-sub-headline
+95	6	24	0	Post		hero-button-text
+96	6	25	0	Post		hero-button-url
+97	5	16	0	Post	Are you Lorem Ipsum Dolor?	cta-title
+98	5	18	0	Post	Let's Go	cta-button-text
+99	5	19	0	Post	http://loremipsum.com	cta-button-url
+100	7	16	0	Post	Lorem ipsum dolor sit amet?	cta-title
+101	7	17	0	Post	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, repudiandae	cta-desc
+102	7	18	0	Post	Buy Now	cta-button-text
+103	6	16	0	Post	Lorem ipsum dolor sit amet, consectetur adipsicing elit?	cta-title
+104	6	18	0	Post	Buy Now	cta-button-text
+105	6	19	0	Post	http://localhost	cta-button-url
+108	9	27	0	Post	Such a great little product	product-description
+109	9	28	0	Post		product-price
+110	10	27	0	Post	Get this product now..	product-description
+111	10	28	0	Post		product-price
+112	11	27	0	Post	In case you need to test your products	product-description
+113	11	28	0	Post		product-price
+114	12	27	0	Post	What if it was a product	product-description
+115	12	28	0	Post		product-price
+116	13	27	0	Post	Great to have	product-description
+117	13	28	0	Post		product-price
+118	14	27	0	Post	product descriptions	product-description
+119	14	28	0	Post		product-price
+122	7	24	0	Post	LEARN MORE	hero-button-text
+126	15	24	0	Post		hero-button-text
+127	15	25	0	Post		hero-button-url
+134	15	18	0	Post	CLICK HERE	cta-button-text
+135	15	19	0	Post	http://google.com	cta-button-url
+136	15	16	0	Post	Do you even lorem? We do too! 	cta-title
+137	15	17	0	Post		cta-desc
+141	16	24	0	Post		hero-button-text
+142	16	25	0	Post		hero-button-url
+144	16	17	0	Post		cta-desc
+148	16	22	0	Post	How to buy	hero-headline
+149	16	23	0	Post	Well this should help	hero-sub-headline
+150	16	16	0	Post	Ready to learn more and get started?	cta-title
+151	16	18	0	Post	SIGN ME UP	cta-button-text
+152	16	19	0	Post	http://google.com	cta-button-url
+153	17	27	0	Post		product-description
+154	17	28	0	Post		product-price
+156	15	22	0	Post	Get in touch	hero-headline
+158	15	23	0	Post	We're more than happy lorem ipsum dolor	hero-sub-headline
+160	1	31	0	Site	Mega is elegant business wordpress theme built for many purpose. You can use this premium wordpress themes for any kind of website.	footer-bio
+162	17	31	0	Theme	Mega is elegant business wordpress theme built for many purpose. You can use this premium wordpress themes for any kind of website.	footer-bio
+163	1	30	0	Site	FOUR SEASONS GROWTH SYSTEMS	footer-copyright
+164	17	30	0	Theme	FOUR SEASONS GROWTH SYSTEMS	footer-copyright
+165	18	21	0	Post		hero-background
+166	18	22	0	Post		hero-headline
+167	18	23	0	Post		hero-sub-headline
+168	18	24	0	Post		hero-button-text
+169	18	25	0	Post		hero-button-url
+170	18	16	0	Post		cta-title
+171	18	17	0	Post		cta-desc
+172	18	18	0	Post		cta-button-text
+173	18	19	0	Post		cta-button-url
+174	20	21	0	Post		hero-background
+175	20	22	0	Post		hero-headline
+176	20	23	0	Post		hero-sub-headline
+177	20	24	0	Post		hero-button-text
+178	20	25	0	Post		hero-button-url
+179	20	16	0	Post		cta-title
+180	20	17	0	Post		cta-desc
+181	20	18	0	Post		cta-button-text
+182	20	19	0	Post		cta-button-url
+192	1	7	0	Site	(989) 000-0000	contact-phone
+193	17	7	0	Theme	(989) 000-0000	contact-phone
+196	15	21	0	Post	http://localhost:3000/media/1/header_stock-photo-close-up-of-potted-chilli-plants-selective-focus-416304895.jpg	hero-background
+197	5	21	0	Post	http://localhost:3000/media/1/header_stock-photo-view-of-a-hotbed-of-peppers-411896623.jpg	hero-background
+198	4	21	0	Post	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	hero-background
+199	6	21	0	Post	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	hero-background
+202	7	21	0	Post	http://localhost:3000/media/1/header_stock-photo-ornamental-cut-kale-ornamental-leaved-kale-brassica-oleracea-var-acephala-beautiful-vegetable-414879862.jpg	hero-background
+203	16	21	0	Post	http://localhost:3000/media/1/header_depositphotos_8499024-flower-plants.jpg	hero-background
 \.
 
 
@@ -612,7 +751,7 @@ COPY custom_fields_relationships (id, objectid, custom_field_id, term_order, obj
 -- Name: custom_fields_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('custom_fields_relationships_id_seq', 1, false);
+SELECT pg_catalog.setval('custom_fields_relationships_id_seq', 204, false);
 
 
 --
@@ -621,29 +760,178 @@ SELECT pg_catalog.setval('custom_fields_relationships_id_seq', 1, false);
 
 COPY metas (id, key, value, objectid, object_class) FROM stdin;
 1	_default	{"has_category":true,"has_tags":true,"has_summary":true,"has_content":true,"has_comments":true,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":true,"has_layout":false,"default_layout":""}	2	PostType
+2	_post_type_1	{"edit":[2,7,28],"edit_other":[2,7,28],"edit_publish":[2,7,28],"publish":[2,7,28],"delete":[2,7,28],"delete_other":[2,7,28],"delete_publish":[2,7,28],"manage_categories":[2,7,28],"manage_tags":[2,7,28]}	3	UserRole
 3	_manager_1	{"media":1,"comments":1,"themes":1,"widgets":1,"nav_menu":1,"plugins":1,"users":1,"settings":1}	3	UserRole
+4	_post_type_1	{"edit":[28],"edit_other":[28],"edit_publish":[28],"publish":[28],"delete":[28],"delete_other":[28],"delete_publish":[28],"manage_categories":[28],"manage_tags":[28]}	4	UserRole
+5	_post_type_1	{"edit":[28]}	5	UserRole
 6	_default	{"not_deleted":true}	6	Category
 7	_default	{"has_category":false,"has_tags":false,"has_summary":false,"has_content":true,"has_comments":false,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":true,"has_layout":false,"default_layout":""}	7	PostType
-2	_post_type_1	{"edit":[2,7],"edit_other":[2,7],"edit_publish":[2,7],"publish":[2,7],"delete":[2,7],"delete_other":[2,7],"delete_publish":[2,7],"manage_categories":[2,7],"manage_tags":[2,7]}	3	UserRole
-8	_default	{"type":"post","object_id":1}	9	NavMenuItem
-9	_default	{"type":"post","object_id":2}	10	NavMenuItem
-4	_post_type_1	{"edit":[2,7],"edit_other":[2,7],"edit_publish":[2,7],"publish":[2,7],"delete":[2,7],"delete_other":[2,7],"delete_publish":[2,7],"manage_categories":[2,7],"manage_tags":[2,7]}	4	UserRole
-5	_post_type_1	{"edit":[2,7]}	5	UserRole
 10	_post_type_1	{}	11	UserRole
 11	_manager_1	{}	11	UserRole
-12	main_settings	{"base_domain":"45.55.56.235"}	1	Site
+12	main_settings	{"base_domain":"localhost:3000"}	1	Site
 13	_default	{"version_installed":0.1}	12	Plugin
 14	front_cache_elements	{"paths":[],"posts":[],"post_types":[7],"skip_posts":[],"home":true,"cache_login":true}	1	Site
 15	_default	{"version_installed":0.1}	13	Plugin
 16	_default	{"version_installed":0.1}	14	Plugin
-19	_default	{"field_key":"colorpicker"}	2	CustomField
-20	_default	{"field_key":"colorpicker"}	3	CustomField
-21	_default	{"field_key":"image"}	4	CustomField
-22	installed_at	2016-06-17 11:27:22 UTC	16	Theme
-18	_default	{"_theme":"fourseason","save_intro":true,"refresh_cache":false}	1	Site
-17	attack_config	{"get":{"sec":20,"max":10},"post":{"sec":20,"max":5},"msg":"Requests Limit exceeded!","ban":5,"cleared":"2016-06-23 01:46:34 -0400"}	1	Site
-23	visits	14	2	Post
-24	visits	13	1	Post
+25	visits	27	1	Post
+26	visits	3	2	Post
+27	date_notified_message		1	Site
+28	slug	home	3	Post
+29	thumb		3	Post
+30	_default	{"keywords":"","status_default":"published"}	3	Post
+31	visits	5	3	Post
+32	slug	product-gallery	4	Post
+33	template	template_masonry_gallery	4	Post
+34	thumb		4	Post
+35	_default	{"keywords":""}	4	Post
+36	visits	121	4	Post
+37	slug	about-us	5	Post
+38	template	template_about	5	Post
+39	thumb		5	Post
+40	_default	{"keywords":""}	5	Post
+41	visits	150	5	Post
+42	slug	our-solutions	6	Post
+43	template	template_our_solutions	6	Post
+44	thumb		6	Post
+45	_default	{"keywords":""}	6	Post
+46	visits	159	6	Post
+57	_default	{"field_key":"email","panel_hidden":"","default_value":"example@gmail.com","multiple":"0","required":"0"}	6	CustomField
+58	_default	{"caption":"undefined: "}	5	CustomFieldGroup
+59	_default	{"field_key":"phone","panel_hidden":"","default_value":"(520) 530 3302","multiple":"0","required":"0"}	7	CustomField
+60	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	8	CustomField
+61	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	9	CustomField
+62	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	10	CustomField
+63	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	11	CustomField
+64	_default	{"field_key":"phone","panel_hidden":"","default_value":"","multiple":"0","required":"0"}	12	CustomField
+65	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	13	CustomField
+66	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	14	CustomField
+67	_default	{"caption":"undefined: "}	15	CustomFieldGroup
+68	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	16	CustomField
+69	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	17	CustomField
+70	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	18	CustomField
+71	_default	{"field_key":"url","panel_hidden":"","default_value":"","multiple":"0","required":"0"}	19	CustomField
+72	_default	{"status_default":"published"}	2	Post
+73	cache_browser_files_{:server=>"local", :connection=>nil, :thumb_folder_name=>"thumb", :bucket_name=>"media", :thumb=>{:w=>100, :h=>100}}	\N	1	Site
+74	_default	{"caption":"undefined: "}	20	CustomFieldGroup
+75	_default	{"field_key":"image","panel_hidden":"","default_value":"","multiple":"0","required":"0"}	21	CustomField
+76	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	22	CustomField
+77	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	23	CustomField
+78	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	24	CustomField
+79	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	25	CustomField
+80	slug	home-1	7	Post
+81	template	template_home	7	Post
+82	thumb		7	Post
+83	_default	{"keywords":""}	7	Post
+199	_default	{"type":"post","object_id":"15"}	40	NavMenuItem
+17	attack_config	{"get":{"sec":20,"max":10},"post":{"sec":20,"max":5},"msg":"Requests Limit exceeded!","ban":5,"cleared":"2016-06-24 14:24:39 +0800"}	1	Site
+84	visits	181	7	Post
+85	_default	{"has_category":true,"has_tags":false,"has_summary":true,"has_content":true,"has_comments":true,"has_picture":true,"has_template":true,"has_keywords":true,"not_deleted":false,"has_layout":true,"default_layout":"index","icon":"shopping-cart","default_template":"","contents_route_format":"post","default_thumb":""}	28	PostType
+86	_default	{"not_deleted":true}	29	Category
+87	_default	{"caption":"undefined: "}	26	CustomFieldGroup
+88	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	27	CustomField
+89	_default	{"field_key":"text_box","panel_hidden":"","default_value":"","multiple":"0","required":"0","translate":"0"}	28	CustomField
+97	slug	test-product	9	Post
+98	summary		9	Post
+99	template		9	Post
+100	layout	index	9	Post
+101	has_comments	0	9	Post
+102	thumb	http://localhost:3000/media/1/greenhouse-cad.jpg	9	Post
+103	_default	{"keywords":""}	9	Post
+104	visits	2	9	Post
+105	slug	amazing-product	10	Post
+106	summary		10	Post
+107	template		10	Post
+108	layout	index	10	Post
+109	has_comments	0	10	Post
+110	thumb	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	10	Post
+111	_default	{"keywords":""}	10	Post
+112	slug	product-precompiler	11	Post
+113	summary		11	Post
+114	template		11	Post
+115	layout	index	11	Post
+116	has_comments	0	11	Post
+117	thumb	http://localhost:3000/media/1/greenhouse-cad.jpg	11	Post
+118	_default	{"keywords":""}	11	Post
+119	slug	no-image-product	12	Post
+120	summary		12	Post
+121	template		12	Post
+122	layout	index	12	Post
+123	has_comments	0	12	Post
+124	thumb	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	12	Post
+125	_default	{"keywords":""}	12	Post
+126	slug	another-product	13	Post
+127	summary		13	Post
+128	template		13	Post
+129	layout	index	13	Post
+130	has_comments	0	13	Post
+131	thumb	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	13	Post
+132	_default	{"keywords":""}	13	Post
+133	slug	product-name	14	Post
+134	summary		14	Post
+135	template		14	Post
+136	layout	index	14	Post
+137	has_comments	0	14	Post
+138	thumb	http://localhost:3000/media/1/greenhouse-cad.jpg	14	Post
+139	_default	{"keywords":""}	14	Post
+140	slug	contact-us	15	Post
+141	template	template_contact	15	Post
+142	thumb		15	Post
+143	_default	{"keywords":""}	15	Post
+144	visits	129	15	Post
+145	slug	how-to-buy	16	Post
+146	template	template_how_to_buy	16	Post
+147	thumb		16	Post
+148	_default	{"keywords":""}	16	Post
+149	visits	99	16	Post
+150	slug	plant-stackers	17	Post
+151	summary		17	Post
+152	template		17	Post
+153	layout	index	17	Post
+154	has_comments	0	17	Post
+155	thumb	http://localhost:3000/media/1/header_random.products_stock-photo-view-into-an-empty-small-greenhouse-ready-for-spring-planting-vegetable-414090220.jpg	17	Post
+156	_default	{"keywords":""}	17	Post
+164	_default	{"field_key":"text_box","panel_hidden":"","default_value":"© COPYRIGHT 2016 FOUR SEASONS GROWTH SYSTEMS","multiple":"0","required":"0","translate":"0"}	30	CustomField
+165	_default	{"field_key":"text_area","panel_hidden":"","default_value":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi velit hic at facere rerum voluptate labore voluptatum nesciunt, magnam praesentium.","multiple":"0","required":"0","translate":"0"}	31	CustomField
+166	_default	{"caption":"Others Site settings"}	29	CustomFieldGroup
+167	slug	blog	18	Post
+168	template	template_blog_index	18	Post
+169	thumb		18	Post
+170	_default	{"keywords":""}	18	Post
+171	visits	76	18	Post
+172	slug	10-reasons-to-buy-a-greenhouse	19	Post
+173	summary		19	Post
+174	template		19	Post
+175	has_comments	0	19	Post
+176	thumb	http://localhost:3000/media/1/agriculture-981585_1920.jpg	19	Post
+177	_default	{"keywords":""}	19	Post
+178	visits	6	19	Post
+179	slug	blog	20	Post
+180	template	template_blog_index	20	Post
+181	thumb		20	Post
+182	_default	{"keywords":""}	20	Post
+183	slug	sample-post	1	Post
+184	summary		1	Post
+185	template		1	Post
+186	has_comments	0	1	Post
+187	thumb	http://localhost:3000/media/1/tomato-1310961_1920.jpg	1	Post
+188	_default	{"keywords":""}	1	Post
+189	visits	2	14	Post
+190	visits	1	17	Post
+191	visits	2	13	Post
+196	_default	{"type":"external","object_id":"/"}	37	NavMenuItem
+197	_default	{"type":"post","object_id":"6"}	38	NavMenuItem
+198	_default	{"type":"post","object_id":"16"}	39	NavMenuItem
+200	_default	{"type":"post","object_id":"5"}	41	NavMenuItem
+201	_default	{"type":"post","object_id":"4"}	42	NavMenuItem
+202	_default	{"type":"post","object_id":"18"}	43	NavMenuItem
+213	_default	{"type":"post","object_id":"4"}	56	NavMenuItem
+214	_default	{"type":"post","object_id":"16"}	57	NavMenuItem
+215	_default	{"type":"post","object_id":"18"}	58	NavMenuItem
+216	_default	{"type":"post","object_id":"7"}	59	NavMenuItem
+217	_default	{"type":"post","object_id":"6"}	60	NavMenuItem
+218	_default	{"type":"post","object_id":"5"}	61	NavMenuItem
+219	_default	{"type":"post","object_id":"15"}	62	NavMenuItem
+18	_default	{"_theme":"fourseason","date_notified":"2016-06-24","save_intro":true,"refresh_cache":true,"permit_create_account":"","logo":"","icon":"","home_page":7,"error_404":"","email":"","front_per_page":10,"admin_per_page":10,"comment_status":"pending","security_captcha_user_register":"","need_validate_email":"","seo_description":"","keywords":"","seo_author":"","twitter_card":"","screenshot":"","mailer_enabled":0,"filesystem_type":"local"}	1	Site
 \.
 
 
@@ -651,7 +939,7 @@ COPY metas (id, key, value, objectid, object_class) FROM stdin;
 -- Name: metas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('metas_id_seq', 24, true);
+SELECT pg_catalog.setval('metas_id_seq', 220, false);
 
 
 --
@@ -659,13 +947,7 @@ SELECT pg_catalog.setval('metas_id_seq', 24, true);
 --
 
 COPY plugins_attacks (id, path, browser_key, site_id, created_at) FROM stdin;
-67	get_/	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 05:46:34.868131
-68	get_/sample-post	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:05.804421
-69	get_/welcome	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:10.045786
-70	get_/	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:27.597268
-71	get_/sample-post	b50faca3bdacfe44c18fbdd67901ebf1	1	2016-06-23 06:28:58.880349
-72	get_/	35e6c7d18afcf428ee91ab2183db2d98	1	2016-06-23 06:43:02.527066
-73	get_/testproxy.php	6fc58e6af46f678af24d195b8ca2dc43	1	2016-06-23 06:46:21.812319
+1801	get_/	a68df58244cdd63719d38ac6be70e52f	1	2016-06-24 06:24:39.304957
 \.
 
 
@@ -673,7 +955,7 @@ COPY plugins_attacks (id, path, browser_key, site_id, created_at) FROM stdin;
 -- Name: plugins_attacks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('plugins_attacks_id_seq', 73, true);
+SELECT pg_catalog.setval('plugins_attacks_id_seq', 1801, true);
 
 
 --
@@ -681,6 +963,8 @@ SELECT pg_catalog.setval('plugins_attacks_id_seq', 73, true);
 --
 
 COPY plugins_contact_forms (id, site_id, count, parent_id, name, slug, description, value, settings, created_at, updated_at) FROM stdin;
+1	1	\N	\N	Contact Form	contact-form		{"fields":[{"label":"Your Name..","field_type":"text","required":true,"field_options":{"size":"large","field_class":"Default","description":""},"cid":"c2"},{"label":"Your Email..","field_type":"email","required":true,"field_options":{"field_class":""},"cid":"c10"},{"label":"Your Phone Number..","field_type":"text","required":true,"field_options":{"size":"large","field_class":"Default"},"cid":"c6"},{"label":"Your Website..","field_type":"text","required":false,"field_options":{"size":"large","field_class":"Default"},"cid":"c14"},{"label":"Your Message..","field_type":"paragraph","required":true,"field_options":{"size":"large","field_class":"Default"},"cid":"c19"}]}	{"railscf_mail":{"to":"htmlnate@gmail.com","subject":"Four Seasons Contact Form","body":"This e-mail was send from contact form."},"railscf_message":{"mail_sent_ok":"Your message has been sent successfully. Thank you very much.","mail_sent_ng":"Failed sending the message. Please try again later or contact administrator by other means.","validation_error":"There was a validation error. Please confirm the fields and submit the form again.","spam":"Failed sending the message. Please try again later or contact administrator by other means.","accept_terms":"Please accept the terms and conditions to continue.","invalid_required":"Please fill in the required field.","invalid_too_long":"This input is too long.","invalid_too_short":"This input is too short.","captcha_not_match":"The entered code is incorrect.","invalid_number":"The numeric format seems invalid.","number_too_small":"Number too small.","number_too_large":"Number too large.","invalid_email":"The e-mail address appears invalid.","invalid_url":"The URL appears invalid.","invalid_tel":"The phone number appears invalid.","quiz_answer_not_correct":"The answer is not correct.","invalid_date":"The date format appears invalid.","date_too_early":"Date too early.","date_too_late":"Date too late.","upload_failed":"Failed to upload the file. There was an error.","upload_file_type_invalid":"Invalid file format.","upload_file_too_large":"This file is too large."},"railscf_form_button":{"name_button":"Send Message"}}	2016-05-03 23:50:21.783683	2016-05-04 00:44:03.380579
+2	1	\N	1	response-2016-05-03 20:33:23 -0400	response-2016-05-03-20-33-23-0400		\N	{"fields":{"c2":"sfaf","c10":"asfs@gmail.com","c6":"516545644","c14":"salkjf","c19":"lol"},"created_at":"2016-05-03 20:33:23"}	2016-05-04 00:33:23.681211	2016-05-04 00:33:23.681211
 \.
 
 
@@ -688,7 +972,7 @@ COPY plugins_contact_forms (id, site_id, count, parent_id, name, slug, descripti
 -- Name: plugins_contact_forms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('plugins_contact_forms_id_seq', 1, false);
+SELECT pg_catalog.setval('plugins_contact_forms_id_seq', 3, false);
 
 
 --
@@ -696,8 +980,25 @@ SELECT pg_catalog.setval('plugins_contact_forms_id_seq', 1, false);
 --
 
 COPY posts (id, title, slug, content, content_filtered, status, published_at, post_parent, visibility, visibility_value, post_class, created_at, updated_at, user_id, post_order, taxonomy_id) FROM stdin;
-1	Sample Post	sample-post	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit. </p> <p> Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus. </p> <p> Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur. </p> <p> Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor. </p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit.   Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus.   Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur.   Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor. 	published	\N	\N	public	\N	Post	2016-06-17 11:27:21.400977	2016-06-17 11:27:21.400977	1	0	2
-2	Welcome	welcome	<p style='text-align: center;'><img width='155' height='155' src='http://camaleon.tuzitio.com/media/132/logo2.png' alt='logo' /></p><p><strong>Camaleon CMS</strong>&nbsp;is a free and open-source tool and a fexible content management system (CMS) based on <a href='rubyonrails.org'>Ruby on Rails 4</a>&nbsp;and MySQL.&nbsp;</p> <p>With Camaleon you can do the following:</p> <ul> <li>Create instantly a lot of sites&nbsp;in the same installation</li> <li>Manage your content information in several languages</li> <li>Extend current functionality by&nbsp;plugins (MVC structure and no more echo or prints anywhere)</li> <li>Create or install different themes for each site</li> <li>Create your own structure without coding anything (adapt Camaleon as you want&nbsp;and not you for Camaleon)</li> <li>Create your store and start to sell your products using our plugins</li> <li>Avoid web attacks</li> <li>Compare the speed and enjoy the speed of your new Camaleon site</li> <li>Customize or create your themes for mobile support</li> <li>Support&nbsp;more visitors at the same time</li> <li>Manage your information with a panel like wordpress&nbsp;</li> <li>All urls are oriented for SEO</li> <li>Multiples roles of users</li> </ul>	Camaleon CMS is a free and open-source tool and a fexible content management system (CMS) based on Ruby on Rails 4 and MySQL.  With Camaleon you can do the following:  Create instantly a lot of sites in the same installation Manage your content information in several languages Extend current functionality by plugins (MVC structure and no more echo or prints anywhere) Create or install different themes for each site Create your own structure without coding anything (adapt Camaleon as you want and not you for Camaleon) Create your store and start to sell your products using our plugins Avoid web attacks Compare the speed and enjoy the speed of your new Camaleon site Customize or create your themes for mobile support Support more visitors at the same time Manage your information with a panel like wordpress  All urls are oriented for SEO Multiples roles of users 	published	\N	\N	public	\N	Post	2016-06-17 11:27:21.505933	2016-06-17 11:27:21.505933	1	0	7
+1	Sample Post	sample-post	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit.</p>\r\n<p>Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus.</p>\r\n<p>Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur.</p>\r\n<p>Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor.</p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra ut augue in posuere. Nulla non malesuada dui. Sed egestas tortor ut purus tempor sodales. Duis non sollicitudin nulla, quis mollis neque. Integer sit amet augue ac neque varius auctor. Vestibulum malesuada leo leo, at semper libero efficitur nec. Etiam semper nisi ac nisi ullamcorper, sed tincidunt purus elementum. Mauris ac congue nibh. Quisque pretium eget leo nec suscipit. Vestibulum ultrices orci ut congue interdum. Morbi dolor nunc, imperdiet vel risus semper, tempor dapibus urna. Phasellus luctus pharetra enim quis volutpat. Integer tristique urna nec malesuada ullamcorper. Curabitur dictum, lectus id ultrices rhoncus, ante neque auctor erat, ut sodales nisi odio sit amet lorem. In hac habitasse platea dictumst. Quisque orci orci, hendrerit at luctus tristique, lobortis in diam. Curabitur ligula enim, rhoncus ut vestibulum a, consequat sit amet nisi. Aliquam bibendum fringilla ultrices. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In justo mi, congue in rhoncus lobortis, facilisis in est. Nam et rhoncus purus. Sed sagittis auctor lectus at rutrum. Morbi ultricies felis mi, ut scelerisque augue facilisis eu. In molestie quam ex. Quisque ut sapien sed odio tempus imperdiet. In id accumsan massa. Morbi quis nunc ullamcorper, interdum enim eu, finibus purus. Vestibulum ac fermentum augue, at tempus ante. Aliquam ultrices, purus ut porttitor gravida, dui augue dignissim massa, ac tempor ante dolor at arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat risus est, eget varius mi ultricies in. Duis non odio ut felis dapibus eleifend. In fringilla enim lobortis placerat efficitur. Nulla sodales faucibus urna, quis viverra dolor facilisis sollicitudin. Aenean ac egestas nibh. Nam non tortor eget nibh scelerisque fermentum. Etiam ornare, nunc ut luctus mollis, ante dolor consectetur augue, non scelerisque odio est a nulla. Nullam cursus egestas nulla, nec commodo nibh suscipit ut. Mauris ut felis sem. Aenean at mi at nisi dictum blandit sit amet at erat. Etiam eget lobortis tellus. Curabitur in commodo arcu, at vehicula tortor.	published	\N	\N	public	\N	Post	2016-04-26 15:58:27.738336	2016-05-02 17:36:14.00797	1	0	2
+2	Welcome	welcome	<p style='text-align: center;'><img width='155' height='155' src='http://camaleon.tuzitio.com/media/132/logo2.png' alt='logo' /></p><p><strong>Camaleon CMS</strong>&nbsp;is a free and open-source tool and a fexible content management system (CMS) based on <a href='rubyonrails.org'>Ruby on Rails 4</a>&nbsp;and MySQL.&nbsp;</p> <p>With Camaleon you can do the following:</p> <ul> <li>Create instantly a lot of sites&nbsp;in the same installation</li> <li>Manage your content information in several languages</li> <li>Extend current functionality by&nbsp;plugins (MVC structure and no more echo or prints anywhere)</li> <li>Create or install different themes for each site</li> <li>Create your own structure without coding anything (adapt Camaleon as you want&nbsp;and not you for Camaleon)</li> <li>Create your store and start to sell your products using our plugins</li> <li>Avoid web attacks</li> <li>Compare the speed and enjoy the speed of your new Camaleon site</li> <li>Customize or create your themes for mobile support</li> <li>Support&nbsp;more visitors at the same time</li> <li>Manage your information with a panel like wordpress&nbsp;</li> <li>All urls are oriented for SEO</li> <li>Multiples roles of users</li> </ul>	Camaleon CMS is a free and open-source tool and a fexible content management system (CMS) based on Ruby on Rails 4 and MySQL.  With Camaleon you can do the following:  Create instantly a lot of sites in the same installation Manage your content information in several languages Extend current functionality by plugins (MVC structure and no more echo or prints anywhere) Create or install different themes for each site Create your own structure without coding anything (adapt Camaleon as you want and not you for Camaleon) Create your store and start to sell your products using our plugins Avoid web attacks Compare the speed and enjoy the speed of your new Camaleon site Customize or create your themes for mobile support Support more visitors at the same time Manage your information with a panel like wordpress  All urls are oriented for SEO Multiples roles of users 	trash	\N	\N	public	\N	Post	2016-04-26 15:58:27.909489	2016-04-26 15:58:27.909489	1	0	7
+3	Home	home	<p>The homepage</p>	The homepage	trash	\N	\N	public	\N	Post	2016-04-27 01:05:18.459809	2016-04-27 01:05:18.459809	1	0	7
+4	Product Gallery	product-gallery	<p>Look at our products</p>	Look at our products	published	\N	\N	public	\N	Post	2016-04-27 01:37:45.482641	2016-04-27 01:37:45.482641	1	0	7
+5	About Us	about-us	<p>we are awesome</p>	we are awesome	published	\N	\N	public	\N	Post	2016-04-27 15:59:38.255784	2016-04-27 15:59:38.255784	1	0	7
+6	Our Solutions	our-solutions	<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum dignissimos, nihil eum. Amet quaerat repellat consequatur quod, voluptatem. Ut doloribus quibusdam libero magni quaerat accusantium voluptatibus totam dolores voluptates, iure dolorum, omnis modi id labore explicabo quo commodi cumque ullam voluptate nam amet molestiae eos! Quis eligendi quisquam debitis beatae distinctio consequuntur tenetur in doloremque, harum maiores odio totam, recusandae temporibus eius sint omnis officiis quod porro. Asperiores tempora quod porro natus. Voluptatibus ad sed odit fuga ea magni amet repudiandae sapiente, enim sunt corrupti quis, quidem dignissimos ipsa expedita in non iste officiis est ratione, beatae, illo aliquid vel?</p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum dignissimos, nihil eum. Amet quaerat repellat consequatur quod, voluptatem. Ut doloribus quibusdam libero magni quaerat accusantium voluptatibus totam dolores voluptates, iure dolorum, omnis modi id labore explicabo quo commodi cumque ullam voluptate nam amet molestiae eos! Quis eligendi quisquam debitis beatae distinctio consequuntur tenetur in doloremque, harum maiores odio totam, recusandae temporibus eius sint omnis officiis quod porro. Asperiores tempora quod porro natus. Voluptatibus ad sed odit fuga ea magni amet repudiandae sapiente, enim sunt corrupti quis, quidem dignissimos ipsa expedita in non iste officiis est ratione, beatae, illo aliquid vel?	published	\N	\N	public	\N	Post	2016-04-27 20:45:32.817472	2016-04-28 03:25:40.721028	1	0	7
+7	Home	home-1	<p>The homepage</p>	The homepage	published	\N	\N	public	\N	Post	2016-04-28 03:02:58.32868	2016-04-28 03:02:58.32868	1	0	7
+9	Test Product	test-product	<h1>Test Product</h1>\r\n<p>Such a great little product</p>	Test Product Such a great little product	published	\N	\N	public	\N	Post	2016-04-28 14:39:03.892049	2016-04-28 14:39:03.892049	1	0	28
+10	Amazing Product	amazing-product	<p>This product is pretty detailed</p>	This product is pretty detailed	published	\N	\N	public	\N	Post	2016-04-28 15:06:20.17066	2016-04-28 15:06:20.17066	1	0	28
+11	Product Precompiler	product-precompiler	<p>In case you need to test your products</p>	In case you need to test your products	published	\N	\N	public	\N	Post	2016-04-28 15:08:19.039637	2016-04-28 15:08:19.039637	1	0	28
+12	No Image Product	no-image-product	<p>testing</p>	testing	published	\N	\N	public	\N	Post	2016-04-28 15:09:24.140515	2016-04-28 15:09:24.140515	1	0	28
+13	Another Product	another-product	<p>asokjroas</p>	asokjroas	published	\N	\N	public	\N	Post	2016-04-28 15:10:39.259176	2016-04-28 15:10:39.259176	1	0	28
+14	Product Name	product-name	<p>safasfsa</p>	safasfsa	published	\N	\N	public	\N	Post	2016-04-28 15:12:35.642847	2016-04-28 15:12:35.642847	1	0	28
+15	Contact Us	contact-us	<p>Please Contact Us.</p>	Please Contact Us.	published	\N	\N	public	\N	Post	2016-04-28 23:54:01.300858	2016-04-28 23:54:01.300858	1	0	7
+16	How to Buy	how-to-buy	<div id="content-section1" class="content-section black-text white-bg top-spacing-medium bottom-spacing-medium title-spacing-medium align-center ">\r\n<div class="wrap-column">\r\n<div class="content-column1">\r\n<div class="widget-entry">\r\n<div class="process process_container_1">\r\n<div class="process_row">\r\n<div class="widget-column1-2 ">\r\n<div class="process-item  process_style_1">\r\n<div class="process-left">\r\n<div class="process-number">1</div>\r\n</div>\r\n<div class="process-right">\r\n<div class="process-name">Let's test the editing</div>\r\n<div class="process-content content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repellendus? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n<div class="widget-column1-2 column-last">\r\n<div class="process-item  process_style_1">\r\n<div class="process-left">\r\n<div class="process-number">2</div>\r\n</div>\r\n<div class="process-right">\r\n<div class="process-name">Lorem ipsum dolor.</div>\r\n<div class="process-content content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, eligendi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n<div class="cleared"></div>\r\n<div class="widget-column1-2 ">\r\n<div class="process-item process_style_1">\r\n<div class="process-left">\r\n<div class="process-number">3</div>\r\n</div>\r\n<div class="process-right">\r\n<div class="process-name">Lorem ipsum dolor.</div>\r\n<div class="process-content content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, quas. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n<div class="widget-column1-2 column-last">\r\n<div class="process-item process_style_1 widget-element-bottom">\r\n<div class="process-left">\r\n<div class="process-number">4</div>\r\n</div>\r\n<div class="process-right">\r\n<div class="process-name">Lorem ipsum dolor.</div>\r\n<div class="process-content content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, fugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n<div class="cleared"></div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n<div class="cleared"></div>\r\n<div class="cleared"></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="content-section black-text white-bg bottom-spacing-medium title-spacing-medium align-center ">\r\n<div class="wrap-column">\r\n<div class="column1">\r\n<div class="wrap">\r\n<div class="content-section-heading">\r\n<h2 class="content-section-subtitle">Lorem ipsum dolor sit amet.</h2>\r\n<h1 class="content-section-title">Lorem ipsum dolor sit amet, consectetur.</h1>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="cleared"></div>\r\n<div class="accordion-wrap"><!-- data-active="1" data-collapsible="0" to make certain tab active.. -->\r\n<div class="accordion accordion-type-group accordion-style-highlight">\r\n<div class="accor-title text-center"><span class="accor-title-icon"><i class="fa fa-angle-down"></i></span> Extra Options</div>\r\n<div class="accor-content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eligendi, vel fugit excepturi, eos odit voluptas. Temporibus quo exercitationem doloremque cupiditate, consequuntur illum suscipit dolore nobis vero. Ipsam autem, necessitatibus?</p>\r\n</div>\r\n<div class="accor-title text-center"><span class="accor-title-icon"><i class="fa fa-angle-down"></i></span> Warranties</div>\r\n<div class="accor-content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.</p>\r\n</div>\r\n<div class="accor-title text-center"><span class="accor-title-icon"><i class="fa fa-angle-down"></i></span> Return Policy</div>\r\n<div class="accor-content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.</p>\r\n</div>\r\n<div class="accor-title text-center"><span class="accor-title-icon"><i class="fa fa-angle-down"></i></span> Recommended Tools</div>\r\n<div class="accor-content">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="cleared"></div>\r\n<div class="cleared"></div>\r\n<!-- end widget entry --></div>\r\n</div>	         1   Let's test the editing  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, repellendus? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.          2   Lorem ipsum dolor.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, eligendi. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.           3   Lorem ipsum dolor.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, quas. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.          4   Lorem ipsum dolor.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, fugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.                      Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur.        Extra Options  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eligendi, vel fugit excepturi, eos odit voluptas. Temporibus quo exercitationem doloremque cupiditate, consequuntur illum suscipit dolore nobis vero. Ipsam autem, necessitatibus?   Warranties  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.   Return Policy  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.   Recommended Tools  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, velit, eum, delectus aliquid dolore numquam dolorem assumenda nisi nemo eveniet et illo tempore voluptatem cum in repudianda.       	published	\N	\N	public	\N	Post	2016-04-29 13:08:06.163929	2016-05-02 21:12:30.72288	1	0	7
+17	Plant Stackers	plant-stackers	<p>This product is great for saving space.</p>	This product is great for saving space.	published	\N	\N	public	\N	Post	2016-04-29 15:20:53.331035	2016-04-29 15:20:53.331035	1	0	28
+18	Blog	blog	<p>Welcome to the blog.</p>	Welcome to the blog.	published	\N	\N	public	\N	Post	2016-04-30 16:25:28.879909	2016-04-30 16:42:30.592739	1	0	7
+19	10 reasons to buy a greenhouse	10-reasons-to-buy-a-greenhouse	<h1>HTML Ipsum Presents</h1>\r\n<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>\r\n<h2>Header Level 2</h2>\r\n<ol>\r\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>\r\n<li>Aliquam tincidunt mauris eu risus.</li>\r\n</ol>\r\n<blockquote>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>\r\n</blockquote>\r\n<h3>Header Level 3</h3>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>\r\n<li>Aliquam tincidunt mauris eu risus.</li>\r\n</ul>\r\n<pre><code>\r\n#header h1 a { \r\n\tdisplay: block; \r\n\twidth: 300px; \r\n\theight: 80px; \r\n}\r\n</code></pre>	HTML Ipsum Presents Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Header Level 2  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam tincidunt mauris eu risus.   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.  Header Level 3  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam tincidunt mauris eu risus.   #header h1 a { display: block; width: 300px; height: 80px; } 	published	\N	\N	public	\N	Post	2016-04-30 16:38:36.967169	2016-04-30 16:38:36.967169	1	0	2
+20	Blog	blog	<p>Welcome to the blog.</p>	Welcome to the blog.	draft	\N	18	public	\N	Post	2016-04-30 16:42:31.671346	2016-04-30 16:42:31.671346	1	0	7
 \.
 
 
@@ -705,7 +1006,7 @@ COPY posts (id, title, slug, content, content_filtered, status, published_at, po
 -- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('posts_id_seq', 2, true);
+SELECT pg_catalog.setval('posts_id_seq', 21, false);
 
 
 --
@@ -725,6 +1026,14 @@ COPY schema_migrations (version) FROM stdin;
 
 COPY term_relationships (id, objectid, term_order, term_taxonomy_id) FROM stdin;
 1	1	\N	6
+3	9	\N	29
+6	12	\N	29
+8	14	\N	29
+10	19	\N	6
+12	17	\N	63
+13	13	\N	63
+14	11	\N	63
+15	10	\N	63
 \.
 
 
@@ -732,7 +1041,7 @@ COPY term_relationships (id, objectid, term_order, term_taxonomy_id) FROM stdin;
 -- Name: term_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('term_relationships_id_seq', 1, true);
+SELECT pg_catalog.setval('term_relationships_id_seq', 16, false);
 
 
 --
@@ -740,22 +1049,39 @@ SELECT pg_catalog.setval('term_relationships_id_seq', 1, true);
 --
 
 COPY term_taxonomy (id, taxonomy, description, parent_id, count, name, slug, term_group, term_order, status, created_at, updated_at, user_id) FROM stdin;
-1	site	\N	\N	\N	4 Seasons Grow System	45.55.56.235	\N	\N	\N	2016-06-17 11:27:20.81152	2016-06-17 11:27:20.81152	\N
-2	post_type	Posts	1	\N	Post	post	\N	\N	\N	2016-06-17 11:27:20.995233	2016-06-17 11:27:20.995233	\N
-3	user_roles	Default roles admin	1	\N	Administrator	admin	-1	\N	\N	2016-06-17 11:27:21.039696	2016-06-17 11:27:21.039696	\N
-4	user_roles	Editor Role	1	\N	Editor	editor	\N	\N	\N	2016-06-17 11:27:21.061822	2016-06-17 11:27:21.061822	\N
-5	user_roles	Contributor Role	1	\N	Contributor	contributor	\N	\N	\N	2016-06-17 11:27:21.077084	2016-06-17 11:27:21.077084	\N
-7	post_type	Pages	1	\N	Page	page	\N	\N	\N	2016-06-17 11:27:21.127269	2016-06-17 11:27:21.127269	\N
-6	category	\N	2	1	Uncategorized	uncategorized	1	\N	2	2016-06-17 11:27:21.114778	2016-06-17 11:27:21.114778	\N
-9	nav_menu_item	\N	8	\N	Sample Post	sample-post	1	\N	\N	2016-06-17 11:27:21.465456	2016-06-17 11:27:21.465456	\N
-8	nav_menu	\N	1	2	Main Menu	main_menu	\N	\N	\N	2016-06-17 11:27:21.184409	2016-06-17 11:27:21.184409	\N
-10	nav_menu_item	\N	8	\N	Welcome	welcome	1	\N	\N	2016-06-17 11:27:21.513263	2016-06-17 11:27:21.513263	\N
-11	user_roles	Default roles client	1	\N	Client	client	-1	\N	\N	2016-06-17 11:27:21.564188	2016-06-17 11:27:21.564188	\N
-12	plugin	\N	1	\N	front_cache	front_cache	1	\N	\N	2016-06-17 11:27:21.775554	2016-06-17 11:27:21.788682	\N
-13	plugin	\N	1	\N	contact_form	contact_form	1	\N	\N	2016-06-17 11:27:21.942133	2016-06-17 11:27:21.951327	\N
-14	plugin	\N	1	\N	attack	attack	1	\N	\N	2016-06-17 11:27:22.147831	2016-06-17 11:27:22.158288	\N
-15	theme	\N	1	\N	default	default	\N	\N	inactive	2016-06-17 11:27:22.379527	2016-06-17 11:27:22.379527	\N
-16	theme	\N	1	\N	Fourseasons	fourseason	\N	\N	\N	2016-06-17 11:27:22.397655	2016-06-17 11:27:22.397655	\N
+1	site		\N	\N	Four Seasons	localhost:3000	\N	\N	\N	2016-04-26 15:58:27.10856	2016-04-27 01:05:59.569192	\N
+2	post_type	Posts	1	\N	Post	post	\N	\N	\N	2016-04-26 15:58:27.265138	2016-04-26 15:58:27.265138	\N
+3	user_roles	Default roles admin	1	\N	Administrator	admin	-1	\N	\N	2016-04-26 15:58:27.314616	2016-04-26 15:58:27.314616	\N
+4	user_roles	Editor Role	1	\N	Editor	editor	\N	\N	\N	2016-04-26 15:58:27.343685	2016-04-26 15:58:27.343685	\N
+5	user_roles	Contributor Role	1	\N	Contributor	contributor	\N	\N	\N	2016-04-26 15:58:27.360887	2016-04-26 15:58:27.360887	\N
+6	category	\N	2	2	Uncategorized	uncategorized	1	\N	2	2016-04-26 15:58:27.405243	2016-04-26 15:58:27.405243	\N
+7	post_type	Pages	1	\N	Page	page	\N	\N	\N	2016-04-26 15:58:27.4182	2016-04-26 15:58:27.4182	\N
+8	nav_menu	\N	1	6	Main Menu	main_menu	\N	\N	\N	2016-04-26 15:58:27.482481	2016-04-26 15:58:27.482481	\N
+11	user_roles	Default roles client	1	\N	Client	client	-1	\N	\N	2016-04-26 15:58:27.98179	2016-04-26 15:58:27.98179	\N
+12	plugin	\N	1	\N	front_cache	front_cache	1	\N	\N	2016-04-26 15:58:28.179564	2016-04-26 15:58:28.202109	\N
+13	plugin	\N	1	\N	contact_form	contact_form	1	\N	\N	2016-04-26 15:58:28.404076	2016-04-26 15:58:28.423656	\N
+14	plugin	\N	1	\N	attack	attack	1	\N	\N	2016-04-26 15:58:28.729213	2016-04-26 15:58:28.748913	\N
+15	theme	\N	1	\N	default	default	\N	\N	inactive	2016-04-26 15:58:29.286244	2016-04-26 15:58:29.286244	\N
+17	theme	\N	1	\N	Fourseasons	fourseason	\N	\N	\N	2016-04-26 19:18:12.964056	2016-04-26 19:18:12.964056	\N
+28	post_type	Products	1	\N	Product	product	\N	\N	\N	2016-04-28 14:32:23.277262	2016-04-28 14:32:23.277262	\N
+29	category	\N	28	3	Uncategorized	uncategorized	1	\N	28	2016-04-28 14:32:23.641605	2016-04-28 14:32:23.641605	\N
+37	nav_menu_item	\N	8	\N	Home	home	1	\N	\N	2016-05-04 00:51:20.114178	2016-05-04 00:51:20.114178	\N
+38	nav_menu_item	\N	8	1	Our Solutions	our-solutions	1	\N	\N	2016-05-04 00:51:20.22739	2016-05-04 00:51:20.22739	\N
+39	nav_menu_item	\N	38	\N	How to Buy	how-to-buy	1	\N	\N	2016-05-04 00:51:20.336317	2016-05-04 00:51:20.336317	\N
+40	nav_menu_item	\N	8	\N	Contact Us	contact-us	1	\N	\N	2016-05-04 00:51:20.467708	2016-05-04 00:51:20.467708	\N
+41	nav_menu_item	\N	8	\N	About Us	about-us	1	\N	\N	2016-05-04 00:51:20.602919	2016-05-04 00:51:20.602919	\N
+42	nav_menu_item	\N	8	\N	Product Gallery	product-gallery	1	\N	\N	2016-05-04 00:51:20.739705	2016-05-04 00:51:20.739705	\N
+43	nav_menu_item	\N	8	\N	Blog	blog	1	\N	\N	2016-05-04 00:51:20.840941	2016-05-04 00:51:20.840941	\N
+44	nav_menu	\N	1	4	Footer Left	footer-left	\N	\N	\N	2016-05-04 00:51:38.227071	2016-05-04 00:51:38.227071	\N
+49	nav_menu	\N	1	3	Footer Right	footer-right	\N	\N	\N	2016-05-04 00:53:03.50211	2016-05-04 00:53:03.50211	\N
+56	nav_menu_item	\N	49	\N	Product Gallery	product-gallery	1	\N	\N	2016-05-04 00:56:04.909129	2016-05-04 00:56:04.909129	\N
+57	nav_menu_item	\N	49	\N	How to Buy	how-to-buy	1	\N	\N	2016-05-04 00:56:04.975194	2016-05-04 00:56:04.975194	\N
+58	nav_menu_item	\N	49	\N	Blog	blog	1	\N	\N	2016-05-04 00:56:05.043538	2016-05-04 00:56:05.043538	\N
+59	nav_menu_item	\N	44	\N	Home	home	1	\N	\N	2016-05-04 00:56:44.048509	2016-05-04 00:56:44.048509	\N
+60	nav_menu_item	\N	44	\N	Our Solutions	our-solutions	1	\N	\N	2016-05-04 00:56:44.126829	2016-05-04 00:56:44.126829	\N
+61	nav_menu_item	\N	44	\N	About Us	about-us	1	\N	\N	2016-05-04 00:56:44.203767	2016-05-04 00:56:44.203767	\N
+62	nav_menu_item	\N	44	\N	Contact Us	contact-us	1	\N	\N	2016-05-04 00:56:44.309008	2016-05-04 00:56:44.309008	\N
+63	category		28	4	Greenhouse	greenhouse	1	\N	28	2016-05-09 16:43:21.854392	2016-05-09 16:43:21.854392	\N
 \.
 
 
@@ -763,7 +1089,7 @@ COPY term_taxonomy (id, taxonomy, description, parent_id, count, name, slug, ter
 -- Name: term_taxonomy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('term_taxonomy_id_seq', 16, true);
+SELECT pg_catalog.setval('term_taxonomy_id_seq', 64, false);
 
 
 --
@@ -779,7 +1105,7 @@ COPY user_relationships (id, term_order, active, term_taxonomy_id, user_id) FROM
 -- Name: user_relationships_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('user_relationships_id_seq', 1, true);
+SELECT pg_catalog.setval('user_relationships_id_seq', 2, false);
 
 
 --
@@ -787,7 +1113,7 @@ SELECT pg_catalog.setval('user_relationships_id_seq', 1, true);
 --
 
 COPY users (id, username, role, email, slug, password_digest, auth_token, password_reset_token, parent_id, password_reset_sent_at, last_login_at, created_at, updated_at, site_id, confirm_email_token, confirm_email_sent_at, is_valid_email) FROM stdin;
-1	admin	admin	admin@local.com	admin	$2a$10$5X30/8ZKSACvYnRSkwW2y.w9QkwpPenaacUibLz0Wcwb3325BaExO	EejdzPUXpWzqFzGpzBXZog	\N	\N	\N	2016-06-17 11:36:19.300709	2016-06-17 11:27:21.319432	2016-06-17 11:36:19.310891	-1	\N	\N	t
+1	admin	admin	admin@local.com	admin	$2a$10$Eh5CeZMWNAa5ekM2lvU23O0FcNKcX96shgY1jsyftUtssDjxChD/C	2zMtAL1v_9cEwVscPsvlcA	\N	\N	\N	2016-05-09 13:15:09.64634	2016-04-26 15:58:27.628342	2016-05-09 13:15:09.674058	-1	\N	\N	t
 \.
 
 
@@ -795,11 +1121,11 @@ COPY users (id, username, role, email, slug, password_digest, auth_token, passwo
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rails
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, true);
+SELECT pg_catalog.setval('users_id_seq', 2, false);
 
 
 --
--- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY comments
@@ -807,7 +1133,7 @@ ALTER TABLE ONLY comments
 
 
 --
--- Name: custom_fields_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: custom_fields_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY custom_fields
@@ -815,7 +1141,7 @@ ALTER TABLE ONLY custom_fields
 
 
 --
--- Name: custom_fields_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: custom_fields_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY custom_fields_relationships
@@ -823,7 +1149,7 @@ ALTER TABLE ONLY custom_fields_relationships
 
 
 --
--- Name: metas_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: metas_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY metas
@@ -831,7 +1157,7 @@ ALTER TABLE ONLY metas
 
 
 --
--- Name: plugins_attacks_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: plugins_attacks_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY plugins_attacks
@@ -839,7 +1165,7 @@ ALTER TABLE ONLY plugins_attacks
 
 
 --
--- Name: plugins_contact_forms_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: plugins_contact_forms_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY plugins_contact_forms
@@ -847,7 +1173,7 @@ ALTER TABLE ONLY plugins_contact_forms
 
 
 --
--- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY posts
@@ -855,7 +1181,7 @@ ALTER TABLE ONLY posts
 
 
 --
--- Name: term_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: term_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY term_relationships
@@ -863,7 +1189,7 @@ ALTER TABLE ONLY term_relationships
 
 
 --
--- Name: term_taxonomy_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: term_taxonomy_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY term_taxonomy
@@ -871,7 +1197,7 @@ ALTER TABLE ONLY term_taxonomy
 
 
 --
--- Name: user_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: user_relationships_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY user_relationships
@@ -879,7 +1205,7 @@ ALTER TABLE ONLY user_relationships
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: rails; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: rails
 --
 
 ALTER TABLE ONLY users
@@ -887,282 +1213,281 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: index_comments_on_approved; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_comments_on_approved; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_comments_on_approved ON comments USING btree (approved);
 
 
 --
--- Name: index_comments_on_comment_parent; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_comments_on_comment_parent; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_comments_on_comment_parent ON comments USING btree (comment_parent);
 
 
 --
--- Name: index_comments_on_post_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_comments_on_post_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_comments_on_post_id ON comments USING btree (post_id);
 
 
 --
--- Name: index_comments_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_comments_on_user_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_comments_on_user_id ON comments USING btree (user_id);
 
 
 --
--- Name: index_custom_fields_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_on_object_class; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_on_object_class ON custom_fields USING btree (object_class);
 
 
 --
--- Name: index_custom_fields_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_on_objectid; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_on_objectid ON custom_fields USING btree (objectid);
 
 
 --
--- Name: index_custom_fields_on_parent_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_on_parent_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_on_parent_id ON custom_fields USING btree (parent_id);
 
 
 --
--- Name: index_custom_fields_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_on_slug; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_on_slug ON custom_fields USING btree (slug);
 
 
 --
--- Name: index_custom_fields_relationships_on_custom_field_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_relationships_on_custom_field_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_relationships_on_custom_field_id ON custom_fields_relationships USING btree (custom_field_id);
 
 
 --
--- Name: index_custom_fields_relationships_on_custom_field_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_relationships_on_custom_field_slug; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_relationships_on_custom_field_slug ON custom_fields_relationships USING btree (custom_field_slug);
 
 
 --
--- Name: index_custom_fields_relationships_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_relationships_on_object_class; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_relationships_on_object_class ON custom_fields_relationships USING btree (object_class);
 
 
 --
--- Name: index_custom_fields_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_custom_fields_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_custom_fields_relationships_on_objectid ON custom_fields_relationships USING btree (objectid);
 
 
 --
--- Name: index_metas_on_key; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_metas_on_key; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_metas_on_key ON metas USING btree (key);
 
 
 --
--- Name: index_metas_on_object_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_metas_on_object_class; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_metas_on_object_class ON metas USING btree (object_class);
 
 
 --
--- Name: index_metas_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_metas_on_objectid; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_metas_on_objectid ON metas USING btree (objectid);
 
 
 --
--- Name: index_plugins_attacks_on_browser_key; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_plugins_attacks_on_browser_key; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_plugins_attacks_on_browser_key ON plugins_attacks USING btree (browser_key);
 
 
 --
--- Name: index_plugins_attacks_on_path; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_plugins_attacks_on_path; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_plugins_attacks_on_path ON plugins_attacks USING btree (path);
 
 
 --
--- Name: index_plugins_attacks_on_site_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_plugins_attacks_on_site_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_plugins_attacks_on_site_id ON plugins_attacks USING btree (site_id);
 
 
 --
--- Name: index_posts_on_post_class; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_posts_on_post_class; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_posts_on_post_class ON posts USING btree (post_class);
 
 
 --
--- Name: index_posts_on_post_parent; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_posts_on_post_parent; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_posts_on_post_parent ON posts USING btree (post_parent);
 
 
 --
--- Name: index_posts_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_posts_on_slug; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_posts_on_slug ON posts USING btree (slug);
 
 
 --
--- Name: index_posts_on_status; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_posts_on_status; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_posts_on_status ON posts USING btree (status);
 
 
 --
--- Name: index_posts_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_posts_on_user_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_posts_on_user_id ON posts USING btree (user_id);
 
 
 --
--- Name: index_term_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_relationships_on_objectid; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_relationships_on_objectid ON term_relationships USING btree (objectid);
 
 
 --
--- Name: index_term_relationships_on_term_order; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_relationships_on_term_order; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_relationships_on_term_order ON term_relationships USING btree (term_order);
 
 
 --
--- Name: index_term_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_relationships_on_term_taxonomy_id ON term_relationships USING btree (term_taxonomy_id);
 
 
 --
--- Name: index_term_taxonomy_on_parent_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_taxonomy_on_parent_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_taxonomy_on_parent_id ON term_taxonomy USING btree (parent_id);
 
 
 --
--- Name: index_term_taxonomy_on_slug; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_taxonomy_on_slug; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_taxonomy_on_slug ON term_taxonomy USING btree (slug);
 
 
 --
--- Name: index_term_taxonomy_on_taxonomy; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_taxonomy_on_taxonomy; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_taxonomy_on_taxonomy ON term_taxonomy USING btree (taxonomy);
 
 
 --
--- Name: index_term_taxonomy_on_term_order; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_taxonomy_on_term_order; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_taxonomy_on_term_order ON term_taxonomy USING btree (term_order);
 
 
 --
--- Name: index_term_taxonomy_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_term_taxonomy_on_user_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_term_taxonomy_on_user_id ON term_taxonomy USING btree (user_id);
 
 
 --
--- Name: index_user_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_user_relationships_on_term_taxonomy_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_user_relationships_on_term_taxonomy_id ON user_relationships USING btree (term_taxonomy_id);
 
 
 --
--- Name: index_user_relationships_on_user_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_user_relationships_on_user_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_user_relationships_on_user_id ON user_relationships USING btree (user_id);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: index_users_on_role; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_users_on_role; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_users_on_role ON users USING btree (role);
 
 
 --
--- Name: index_users_on_site_id; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_users_on_site_id; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_users_on_site_id ON users USING btree (site_id);
 
 
 --
--- Name: index_users_on_username; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: index_users_on_username; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE INDEX index_users_on_username ON users USING btree (username);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: rails; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: rails
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: postgres
+-- Name: public; Type: ACL; Schema: -; Owner: rails
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
+REVOKE ALL ON SCHEMA public FROM rails;
+GRANT ALL ON SCHEMA public TO rails;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
 -- PostgreSQL database dump complete
 --
-
